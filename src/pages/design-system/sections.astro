@@ -15,17 +15,17 @@ import Section from '@/components/layout/Section.astro';
       <div class="absolute inset-0 bg-gradient-to-b from-brand-forest/5 to-transparent pointer-events-none"></div>
       <div class="relative z-10">
         <span class="font-mono text-xs text-brand-forest uppercase tracking-widest">Plataforma gratuita</span>
-        <h2 class="font-display font-bold text-3xl md:text-5xl text-white mt-3 leading-tight">
+        <h2 class="font-display font-bold text-3xl md:text-5xl t-heading mt-3 leading-tight">
           Juntos, somos<br /><span class="text-gradient-forest">+Fortes</span>
         </h2>
-        <p class="text-brand-dark-muted max-w-lg mx-auto mt-4">
+        <p class="t-muted max-w-lg mx-auto mt-4">
           Acompanhe sua jornada de mudanca com quem te apoia. Check-in diario, streak e rede de apoio — tudo em um so lugar.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
           <button class="px-8 py-3 bg-brand-forest text-white rounded-[12px] font-body font-semibold shadow-glow hover:bg-brand-forest-light transition-colors">
             Comece sua jornada
           </button>
-          <button class="px-8 py-3 bg-transparent text-brand-dark-muted rounded-[12px] font-body font-semibold hover:text-white transition-colors">
+          <button class="px-8 py-3 bg-transparent t-muted rounded-[12px] font-body font-semibold hover:t-heading transition-colors">
             Saiba mais
           </button>
         </div>
@@ -45,8 +45,8 @@ import Section from '@/components/layout/Section.astro';
       ].map((f) => (
         <div class="surface-card p-5 space-y-2">
           <span class="text-2xl">{f.icon}</span>
-          <h4 class="font-display font-bold text-white">{f.title}</h4>
-          <p class="text-sm text-brand-dark-muted">{f.desc}</p>
+          <h4 class="font-display font-bold t-heading">{f.title}</h4>
+          <p class="text-sm t-muted">{f.desc}</p>
         </div>
       ))}
     </div>
@@ -54,11 +54,11 @@ import Section from '@/components/layout/Section.astro';
 
   <Section number="03" title="Social Proof" subtitle="Bloco de prova social">
     <div class="surface-card p-8 text-center rounded-[20px]">
-      <span class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest">Depoimento</span>
-      <blockquote class="font-display text-xl md:text-2xl text-white mt-4 max-w-2xl mx-auto leading-relaxed">
+      <span class="font-mono text-xs t-muted uppercase tracking-widest">Depoimento</span>
+      <blockquote class="font-display text-xl md:text-2xl t-heading mt-4 max-w-2xl mx-auto leading-relaxed">
         "Eu tentei parar de beber sozinho varias vezes. Quando minha irma comecou a acompanhar pelo app, tudo mudou. Saber que alguem olha por mim sem me julgar fez toda a diferenca."
       </blockquote>
-      <div class="mt-4 text-sm text-brand-dark-muted">— Protagonista anonimo</div>
+      <div class="mt-4 text-sm t-muted">— Protagonista anonimo</div>
     </div>
   </Section>
 
@@ -66,10 +66,10 @@ import Section from '@/components/layout/Section.astro';
     <div class="surface-elevated p-8 md:p-12 rounded-[20px] text-center relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-r from-brand-forest/5 via-transparent to-brand-coral/5 pointer-events-none"></div>
       <div class="relative z-10">
-        <h3 class="font-display font-bold text-2xl md:text-3xl text-white">
+        <h3 class="font-display font-bold text-2xl md:text-3xl t-heading">
           Ninguem muda sozinho.
         </h3>
-        <p class="text-brand-dark-muted mt-3 max-w-md mx-auto">
+        <p class="t-muted mt-3 max-w-md mx-auto">
           Comece sua jornada e convide quem te apoia. E gratuito, sempre.
         </p>
         <button class="mt-6 px-8 py-3 bg-brand-forest text-white rounded-[12px] font-body font-semibold shadow-glow hover:bg-brand-forest-light transition-colors">

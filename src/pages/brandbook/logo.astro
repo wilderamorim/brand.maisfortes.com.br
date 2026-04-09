@@ -17,16 +17,16 @@ import Section from '@/components/layout/Section.astro';
       <div class="surface-elevated p-12 flex items-center justify-center">
         <div class="flex items-center gap-3">
           <div class="w-14 h-14 rounded-xl bg-brand-forest flex items-center justify-center shadow-glow-md">
-            <span class="font-display font-bold text-3xl text-white">+</span>
+            <span class="font-display font-bold text-3xl t-heading">+</span>
           </div>
-          <span class="font-display font-bold text-4xl text-white">Fortes</span>
+          <span class="font-display font-bold text-4xl t-heading">Fortes</span>
         </div>
       </div>
       <!-- Light background -->
       <div class="p-12 flex items-center justify-center rounded-lg bg-white">
         <div class="flex items-center gap-3">
           <div class="w-14 h-14 rounded-xl bg-brand-forest flex items-center justify-center">
-            <span class="font-display font-bold text-3xl text-white">+</span>
+            <span class="font-display font-bold text-3xl t-heading">+</span>
           </div>
           <span class="font-display font-bold text-4xl text-brand-charcoal">Fortes</span>
         </div>
@@ -41,28 +41,28 @@ import Section from '@/components/layout/Section.astro';
       <div class="surface-card p-6 flex flex-col items-center gap-3">
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded-lg bg-brand-forest flex items-center justify-center">
-            <span class="font-display font-bold text-lg text-white">+</span>
+            <span class="font-display font-bold text-lg t-heading">+</span>
           </div>
-          <span class="font-display font-bold text-lg text-white">Fortes</span>
+          <span class="font-display font-bold text-lg t-heading">Fortes</span>
         </div>
-        <span class="font-mono text-[10px] text-brand-dark-muted">Horizontal</span>
+        <span class="font-mono text-[10px] t-muted">Horizontal</span>
       </div>
       <!-- Stacked -->
       <div class="surface-card p-6 flex flex-col items-center gap-3">
         <div class="flex flex-col items-center gap-1">
           <div class="w-10 h-10 rounded-lg bg-brand-forest flex items-center justify-center">
-            <span class="font-display font-bold text-xl text-white">+</span>
+            <span class="font-display font-bold text-xl t-heading">+</span>
           </div>
-          <span class="font-display font-bold text-sm text-white">Fortes</span>
+          <span class="font-display font-bold text-sm t-heading">Fortes</span>
         </div>
-        <span class="font-mono text-[10px] text-brand-dark-muted">Stacked</span>
+        <span class="font-mono text-[10px] t-muted">Stacked</span>
       </div>
       <!-- Icon -->
       <div class="surface-card p-6 flex flex-col items-center gap-3">
         <div class="w-12 h-12 rounded-xl bg-brand-forest flex items-center justify-center shadow-glow">
-          <span class="font-display font-bold text-2xl text-white">+</span>
+          <span class="font-display font-bold text-2xl t-heading">+</span>
         </div>
-        <span class="font-mono text-[10px] text-brand-dark-muted">Icon</span>
+        <span class="font-mono text-[10px] t-muted">Icon</span>
       </div>
       <!-- Monochrome -->
       <div class="surface-card p-6 flex flex-col items-center gap-3">
@@ -70,9 +70,9 @@ import Section from '@/components/layout/Section.astro';
           <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
             <span class="font-display font-bold text-lg text-brand-night">+</span>
           </div>
-          <span class="font-display font-bold text-lg text-white">Fortes</span>
+          <span class="font-display font-bold text-lg t-heading">Fortes</span>
         </div>
-        <span class="font-mono text-[10px] text-brand-dark-muted">Monochrome</span>
+        <span class="font-mono text-[10px] t-muted">Monochrome</span>
       </div>
     </div>
   </Section>
@@ -84,9 +84,9 @@ import Section from '@/components/layout/Section.astro';
         <div class="border-2 border-dashed border-brand-forest/30 p-8 rounded-xl">
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 rounded-xl bg-brand-forest flex items-center justify-center">
-              <span class="font-display font-bold text-2xl text-white">+</span>
+              <span class="font-display font-bold text-2xl t-heading">+</span>
             </div>
-            <span class="font-display font-bold text-3xl text-white">Fortes</span>
+            <span class="font-display font-bold text-3xl t-heading">Fortes</span>
           </div>
         </div>
         <span class="absolute -top-6 left-1/2 -translate-x-1/2 font-mono text-[10px] text-brand-forest">
@@ -111,7 +111,7 @@ import Section from '@/components/layout/Section.astro';
           <div class="w-10 h-10 mx-auto rounded-full bg-brand-coral/10 flex items-center justify-center mb-2">
             <span class="text-brand-coral text-lg">✕</span>
           </div>
-          <p class="text-xs text-brand-dark-muted">{rule}</p>
+          <p class="text-xs t-muted">{rule}</p>
         </div>
       ))}
     </div>

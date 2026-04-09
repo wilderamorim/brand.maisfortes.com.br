@@ -19,8 +19,8 @@ import Section from '@/components/layout/Section.astro';
         { label: 'Radius', value: '2px' },
       ].map((spec) => (
         <div class="surface-card p-4 text-center">
-          <span class="font-mono text-xs text-brand-dark-muted block mb-1">{spec.label}</span>
-          <span class="font-display font-bold text-white">{spec.value}</span>
+          <span class="font-mono text-xs t-muted block mb-1">{spec.label}</span>
+          <span class="font-display font-bold t-heading">{spec.value}</span>
         </div>
       ))}
     </div>
@@ -42,12 +42,12 @@ import Section from '@/components/layout/Section.astro';
       ].map((icon) => (
         <div class="surface-card p-4 text-center group hover:border-brand-forest/40 transition-colors">
           <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-brand-dark-muted group-hover:text-brand-forest transition-colors">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="t-muted group-hover:text-brand-forest transition-colors">
               <path d={icon.svg} />
             </svg>
           </div>
-          <span class="text-xs text-white block">{icon.label}</span>
-          <span class="font-mono text-[10px] text-brand-dark-muted/60">{icon.name}</span>
+          <span class="text-xs t-heading block">{icon.label}</span>
+          <span class="font-mono text-[10px] t-muted/60">{icon.name}</span>
         </div>
       ))}
     </div>
@@ -57,7 +57,7 @@ import Section from '@/components/layout/Section.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="surface-card p-5">
         <h4 class="font-mono text-xs text-brand-forest uppercase tracking-widest mb-3">Fazer</h4>
-        <ul class="space-y-2 text-sm text-white">
+        <ul class="space-y-2 text-sm t-heading">
           <li class="flex gap-2"><span class="text-brand-forest">+</span> Manter stroke de 1.5px em todos os tamanhos</li>
           <li class="flex gap-2"><span class="text-brand-forest">+</span> Usar icones da biblioteca Lucide</li>
           <li class="flex gap-2"><span class="text-brand-forest">+</span> Manter estilo outlined consistente</li>
@@ -66,7 +66,7 @@ import Section from '@/components/layout/Section.astro';
       </div>
       <div class="surface-card p-5">
         <h4 class="font-mono text-xs text-brand-coral uppercase tracking-widest mb-3">Evitar</h4>
-        <ul class="space-y-2 text-sm text-brand-dark-muted">
+        <ul class="space-y-2 text-sm t-muted">
           <li class="flex gap-2"><span class="text-brand-coral">-</span> Misturar icones filled com outlined</li>
           <li class="flex gap-2"><span class="text-brand-coral">-</span> Alterar proporcoes dos icones</li>
           <li class="flex gap-2"><span class="text-brand-coral">-</span> Usar icones de bibliotecas diferentes</li>

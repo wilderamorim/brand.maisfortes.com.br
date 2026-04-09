@@ -21,8 +21,8 @@ const dsPages = navigation.find(g => g.slug === 'design-system')?.pages ?? [];
           class="group surface-card p-5 hover:border-brand-forest/40 transition-all duration-200"
         >
           <div class="flex items-center gap-3">
-            <span class="font-mono text-xs text-brand-dark-muted/60">{page.number}</span>
-            <span class="font-display font-bold text-sm text-white group-hover:text-brand-forest transition-colors">{page.title}</span>
+            <span class="font-mono text-xs t-muted/60">{page.number}</span>
+            <span class="font-display font-bold text-sm t-heading group-hover:text-brand-forest transition-colors">{page.title}</span>
           </div>
         </a>
       ))}

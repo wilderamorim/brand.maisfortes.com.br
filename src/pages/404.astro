@@ -26,10 +26,10 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <!-- Message -->
-      <h1 class="font-display font-bold text-2xl md:text-3xl text-white mb-3">
+      <h1 class="font-display font-bold text-2xl md:text-3xl t-heading mb-3">
         Pagina nao encontrada
       </h1>
-      <p class="text-brand-dark-muted max-w-md mx-auto mb-8">
+      <p class="t-muted max-w-md mx-auto mb-8">
         Essa pagina nao existe ou foi movida. Mas tudo bem — nem todo caminho e reto. O importante e voltar.
       </p>
 
@@ -43,14 +43,14 @@ const currentPath = Astro.url.pathname;
         </a>
         <a
           href="/brandbook/"
-          class="px-6 py-2.5 bg-transparent text-brand-dark-muted rounded-[12px] font-body font-semibold text-sm hover:text-white hover:bg-brand-dark-surface transition-colors"
+          class="px-6 py-2.5 bg-transparent t-muted rounded-[12px] font-body font-semibold text-sm hover:t-heading hover:t-surface transition-colors"
         >
           Ver Guidelines
         </a>
       </div>
 
       <!-- Footer -->
-      <div class="mt-16 font-mono text-[10px] text-brand-dark-muted/50 tracking-wider">
+      <div class="mt-16 font-mono text-[10px] t-muted/50 tracking-wider">
         {brand.name} <span class="text-brand-dark-border">//</span> Brand Identity System <span class="text-brand-dark-border">//</span> v{brand.version}
       </div>
     </div>

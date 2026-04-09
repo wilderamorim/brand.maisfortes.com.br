@@ -18,8 +18,8 @@ import Section from '@/components/layout/Section.astro';
         { title: 'Simplicity & Calm', desc: 'Interfaces limpas, espacamento generoso, sem ruido visual. Paz.', tags: ['minimal', 'whitespace', 'soft UI'] },
       ].map((ref) => (
         <div class="surface-elevated p-6 space-y-3">
-          <h4 class="font-display font-bold text-white">{ref.title}</h4>
-          <p class="text-sm text-brand-dark-muted">{ref.desc}</p>
+          <h4 class="font-display font-bold t-heading">{ref.title}</h4>
+          <p class="text-sm t-muted">{ref.desc}</p>
           <div class="flex flex-wrap gap-1.5">
             {ref.tags.map((tag) => (
               <span class="px-2 py-0.5 rounded bg-brand-forest/10 text-brand-forest text-[10px] font-mono">{tag}</span>
@@ -41,8 +41,8 @@ import Section from '@/components/layout/Section.astro';
         <div class="surface-card overflow-hidden">
           <div class="h-24" style={`background: ${item.color};`}></div>
           <div class="p-3">
-            <span class="font-display font-bold text-sm text-white block">{item.emotion}</span>
-            <span class="text-xs text-brand-dark-muted">{item.desc}</span>
+            <span class="font-display font-bold text-sm t-heading block">{item.emotion}</span>
+            <span class="text-xs t-muted">{item.desc}</span>
           </div>
         </div>
       ))}
@@ -58,11 +58,11 @@ import Section from '@/components/layout/Section.astro';
         { name: 'Noom', influence: 'Mudanca comportamental guiada, tom conversacional', tags: ['behavior change', 'conversational', 'coaching'] },
       ].map((ref) => (
         <div class="surface-card p-5 space-y-2">
-          <h4 class="font-display font-bold text-white">{ref.name}</h4>
-          <p class="text-sm text-brand-dark-muted">{ref.influence}</p>
+          <h4 class="font-display font-bold t-heading">{ref.name}</h4>
+          <p class="text-sm t-muted">{ref.influence}</p>
           <div class="flex flex-wrap gap-1.5">
             {ref.tags.map((tag) => (
-              <span class="px-2 py-0.5 rounded bg-brand-dark-border/30 text-brand-dark-muted text-[10px] font-mono">{tag}</span>
+              <span class="px-2 py-0.5 rounded bg-brand-dark-border/30 t-muted text-[10px] font-mono">{tag}</span>
             ))}
           </div>
         </div>

@@ -22,7 +22,7 @@ import Section from '@/components/layout/Section.astro';
           <span class={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${alert.text} bg-current/10`}>{alert.icon}</span>
           <div>
             <span class={`font-mono text-[10px] uppercase tracking-widest ${alert.text}`}>{alert.type}</span>
-            <p class="text-sm text-white mt-0.5">{alert.msg}</p>
+            <p class="text-sm t-heading mt-0.5">{alert.msg}</p>
           </div>
         </div>
       ))}
@@ -36,10 +36,10 @@ import Section from '@/components/layout/Section.astro';
         { msg: 'Convite enviado para Maria', icon: '→' },
         { msg: 'Streak: 7 dias! 🔥', icon: '🎉' },
       ].map((toast) => (
-        <div class="flex items-center gap-3 px-4 py-3 rounded-[12px] bg-brand-dark-surface border border-brand-dark-border/50 shadow-lg">
+        <div class="flex items-center gap-3 px-4 py-3 rounded-[12px] t-surface border t-border/50 shadow-lg">
           <span class="text-brand-forest text-sm">{toast.icon}</span>
-          <span class="text-sm text-white flex-1">{toast.msg}</span>
-          <button class="text-brand-dark-muted hover:text-white text-xs">✕</button>
+          <span class="text-sm t-heading flex-1">{toast.msg}</span>
+          <button class="t-muted hover:t-heading text-xs">✕</button>
         </div>
       ))}
     </div>
@@ -48,10 +48,10 @@ import Section from '@/components/layout/Section.astro';
   <Section number="03" title="Modal" subtitle="Dialogo de confirmacao">
     <div class="max-w-sm mx-auto">
       <div class="surface-elevated p-6 rounded-[20px] space-y-4 shadow-lg">
-        <h3 class="font-display font-bold text-lg text-white">Remover apoiador?</h3>
-        <p class="text-sm text-brand-dark-muted">Maria nao podera mais acompanhar sua jornada. Voce pode convida-la novamente depois.</p>
+        <h3 class="font-display font-bold text-lg t-heading">Remover apoiador?</h3>
+        <p class="text-sm t-muted">Maria nao podera mais acompanhar sua jornada. Voce pode convida-la novamente depois.</p>
         <div class="flex gap-3 pt-2">
-          <button class="flex-1 py-2 bg-transparent text-brand-dark-muted rounded-[12px] font-body text-sm hover:bg-brand-dark-surface transition-colors border border-brand-dark-border/30">Cancelar</button>
+          <button class="flex-1 py-2 bg-transparent t-muted rounded-[12px] font-body text-sm hover:t-surface transition-colors border t-border/30">Cancelar</button>
           <button class="flex-1 py-2 bg-[#E5383B] text-white rounded-[12px] font-body font-semibold text-sm hover:bg-[#C62828] transition-colors">Remover</button>
         </div>
       </div>
@@ -64,8 +64,8 @@ import Section from '@/components/layout/Section.astro';
         <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-forest/10 flex items-center justify-center">
           <span class="text-3xl">🌱</span>
         </div>
-        <h4 class="font-display font-bold text-white mb-2">Nenhum check-in ainda</h4>
-        <p class="text-sm text-brand-dark-muted mb-4">Faca seu primeiro check-in e comece a construir seu streak.</p>
+        <h4 class="font-display font-bold t-heading mb-2">Nenhum check-in ainda</h4>
+        <p class="text-sm t-muted mb-4">Faca seu primeiro check-in e comece a construir seu streak.</p>
         <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm shadow-glow">
           Fazer check-in
         </button>

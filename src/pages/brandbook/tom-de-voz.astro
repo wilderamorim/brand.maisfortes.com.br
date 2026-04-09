@@ -19,8 +19,8 @@ import Section from '@/components/layout/Section.astro';
         { title: 'Acolhimento antes de acao', example: '"Tudo bem. O importante e voltar." — primeiro valida, depois motiva.' },
       ].map((p) => (
         <div class="surface-card p-5 space-y-2">
-          <h4 class="font-display font-bold text-white">{p.title}</h4>
-          <p class="text-sm text-brand-dark-muted italic">{p.example}</p>
+          <h4 class="font-display font-bold t-heading">{p.title}</h4>
+          <p class="text-sm t-muted italic">{p.example}</p>
         </div>
       ))}
     </div>
@@ -38,11 +38,11 @@ import Section from '@/components/layout/Section.astro';
         <div class="surface-card p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <span class="font-mono text-[10px] text-brand-coral uppercase tracking-widest">Antes</span>
-            <p class="text-sm text-brand-dark-muted mt-1 line-through decoration-brand-coral/30">{item.before}</p>
+            <p class="text-sm t-muted mt-1 line-through decoration-brand-coral/30">{item.before}</p>
           </div>
           <div>
             <span class="font-mono text-[10px] text-brand-forest uppercase tracking-widest">Depois</span>
-            <p class="text-sm text-white mt-1">{item.after}</p>
+            <p class="text-sm t-heading mt-1">{item.after}</p>
           </div>
         </div>
       ))}
@@ -57,10 +57,10 @@ import Section from '@/components/layout/Section.astro';
         { canal: 'Email', tom: 'Caloroso, pessoal', exemplo: '"Oi [nome], sua semana foi incrivel"', nota: 'Sempre personalizado com nome' },
       ].map((c) => (
         <div class="surface-card p-5 space-y-3">
-          <h4 class="font-display font-bold text-white">{c.canal}</h4>
+          <h4 class="font-display font-bold t-heading">{c.canal}</h4>
           <span class="font-mono text-xs text-brand-forest">{c.tom}</span>
-          <p class="text-sm text-white italic">"{c.exemplo}"</p>
-          <p class="text-[10px] text-brand-dark-muted">{c.nota}</p>
+          <p class="text-sm t-heading italic">"{c.exemplo}"</p>
+          <p class="text-[10px] t-muted">{c.nota}</p>
         </div>
       ))}
     </div>
@@ -81,7 +81,7 @@ import Section from '@/components/layout/Section.astro';
             <div class="w-5 h-5 rounded border border-brand-forest/40 flex items-center justify-center shrink-0 mt-0.5">
               <span class="text-brand-forest text-xs">?</span>
             </div>
-            <span class="text-brand-dark-text">{item}</span>
+            <span class="t-body">{item}</span>
           </li>
         ))}
       </ul>

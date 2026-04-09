@@ -16,10 +16,10 @@ import { brand } from '@/lib/brand';
   <!-- 01 Manifesto -->
   <Section number="01" title="Manifesto" subtitle="O que acreditamos">
     <div class="surface-elevated p-8 space-y-4">
-      <blockquote class="font-display text-xl md:text-2xl text-white leading-relaxed italic">
+      <blockquote class="font-display text-xl md:text-2xl t-heading leading-relaxed italic">
         "Ninguem muda sozinho."
       </blockquote>
-      <p class="text-brand-dark-text/80 leading-relaxed max-w-3xl">
+      <p class="t-body/80 leading-relaxed max-w-3xl">
         {brand.manifesto}
       </p>
     </div>
@@ -28,7 +28,7 @@ import { brand } from '@/lib/brand';
   <!-- 02 Proposito -->
   <Section number="02" title="Proposito" subtitle="Por que existimos">
     <div class="surface-card p-6">
-      <p class="text-lg text-white font-body font-medium leading-relaxed">{brand.purpose}</p>
+      <p class="text-lg t-heading font-body font-medium leading-relaxed">{brand.purpose}</p>
     </div>
   </Section>
 
@@ -37,8 +37,8 @@ import { brand } from '@/lib/brand';
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {brand.values.map((v) => (
         <div class="surface-card p-5 space-y-2">
-          <h4 class="font-display font-bold text-white">{v.name}</h4>
-          <p class="text-sm text-brand-dark-muted">{v.description}</p>
+          <h4 class="font-display font-bold t-heading">{v.name}</h4>
+          <p class="text-sm t-muted">{v.description}</p>
         </div>
       ))}
     </div>
@@ -51,15 +51,15 @@ import { brand } from '@/lib/brand';
       <div class="surface-card p-6">
         <div class="flex items-center justify-between mb-4">
           <span class="font-mono text-xs text-brand-forest">{brand.typography.display.family}</span>
-          <span class="font-mono text-[10px] text-brand-dark-muted">Display / Headlines</span>
+          <span class="font-mono text-[10px] t-muted">Display / Headlines</span>
         </div>
-        <p class="font-display font-bold text-4xl md:text-6xl text-white leading-tight">
+        <p class="font-display font-bold text-4xl md:text-6xl t-heading leading-tight">
           Juntos, somos +Fortes
         </p>
-        <p class="font-display text-lg text-brand-dark-muted mt-2">
+        <p class="font-display text-lg t-muted mt-2">
           Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
         </p>
-        <div class="flex gap-4 mt-4 font-mono text-xs text-brand-dark-muted">
+        <div class="flex gap-4 mt-4 font-mono text-xs t-muted">
           {brand.typography.display.weights.map((w) => (
             <span class="px-2 py-1 rounded bg-brand-dark-border/30">{w}</span>
           ))}
@@ -70,15 +70,15 @@ import { brand } from '@/lib/brand';
       <div class="surface-card p-6">
         <div class="flex items-center justify-between mb-4">
           <span class="font-mono text-xs text-brand-forest">{brand.typography.body.family}</span>
-          <span class="font-mono text-[10px] text-brand-dark-muted">Body / UI</span>
+          <span class="font-mono text-[10px] t-muted">Body / UI</span>
         </div>
-        <p class="font-body text-lg text-white leading-relaxed">
+        <p class="font-body text-lg t-heading leading-relaxed">
           A mudanca e dificil. Tem dia que voce nao vai querer nem abrir o app. Mas quando alguem esta olhando por voce, fica mais facil dar o proximo passo.
         </p>
-        <p class="font-body text-base text-brand-dark-muted mt-2">
+        <p class="font-body text-base t-muted mt-2">
           Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
         </p>
-        <div class="flex gap-4 mt-4 font-mono text-xs text-brand-dark-muted">
+        <div class="flex gap-4 mt-4 font-mono text-xs t-muted">
           {brand.typography.body.weights.map((w) => (
             <span class="px-2 py-1 rounded bg-brand-dark-border/30">{w}</span>
           ))}
@@ -89,12 +89,12 @@ import { brand } from '@/lib/brand';
       <div class="surface-card p-6">
         <div class="flex items-center justify-between mb-4">
           <span class="font-mono text-xs text-brand-forest">{brand.typography.mono.family}</span>
-          <span class="font-mono text-[10px] text-brand-dark-muted">Mono / Data</span>
+          <span class="font-mono text-[10px] t-muted">Mono / Data</span>
         </div>
-        <p class="font-mono text-4xl font-bold text-white">
+        <p class="font-mono text-4xl font-bold t-heading">
           30 <span class="text-brand-forest text-lg">dias seguidos</span>
         </p>
-        <p class="font-mono text-base text-brand-dark-muted mt-2">
+        <p class="font-mono text-base t-muted mt-2">
           0123456789 . : / - + = # @ { } [ ] ( )
         </p>
       </div>
@@ -106,7 +106,7 @@ import { brand } from '@/lib/brand';
     <div class="space-y-6">
       <!-- Primary -->
       <div>
-        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-3">Cores Primarias</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-3">Cores Primarias</h4>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
           <ColorSwatch name={brand.colors.forest.name} hex={brand.colors.forest.hex} rgb={brand.colors.forest.rgb} usage={brand.colors.forest.usage} token={brand.colors.forest.token} large />
           <ColorSwatch name={brand.colors.forestLight.name} hex={brand.colors.forestLight.hex} rgb={brand.colors.forestLight.rgb} usage={brand.colors.forestLight.usage} token={brand.colors.forestLight.token} />
@@ -116,7 +116,7 @@ import { brand } from '@/lib/brand';
 
       <!-- Secondary -->
       <div>
-        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-3">Cores Secundarias</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-3">Cores Secundarias</h4>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
           <ColorSwatch name={brand.colors.coral.name} hex={brand.colors.coral.hex} rgb={brand.colors.coral.rgb} usage={brand.colors.coral.usage} token={brand.colors.coral.token} />
           <ColorSwatch name={brand.colors.amber.name} hex={brand.colors.amber.hex} rgb={brand.colors.amber.rgb} usage={brand.colors.amber.usage} token={brand.colors.amber.token} />
@@ -126,7 +126,7 @@ import { brand } from '@/lib/brand';
 
       <!-- Dark neutrals -->
       <div>
-        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-3">Neutros — Dark Mode</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-3">Neutros — Dark Mode</h4>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
           <ColorSwatch name={brand.colors.night.name} hex={brand.colors.night.hex} usage={brand.colors.night.usage} token={brand.colors.night.token} />
           <ColorSwatch name={brand.colors.darkSurface.name} hex={brand.colors.darkSurface.hex} usage={brand.colors.darkSurface.usage} token={brand.colors.darkSurface.token} />
@@ -135,7 +135,7 @@ import { brand } from '@/lib/brand';
 
       <!-- Light neutrals -->
       <div>
-        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-3">Neutros — Light Mode</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-3">Neutros — Light Mode</h4>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
           <ColorSwatch name={brand.colors.white.name} hex={brand.colors.white.hex} usage={brand.colors.white.usage} token={brand.colors.white.token} />
           <ColorSwatch name={brand.colors.snow.name} hex={brand.colors.snow.hex} usage={brand.colors.snow.usage} token={brand.colors.snow.token} />
@@ -150,29 +150,29 @@ import { brand } from '@/lib/brand';
     <div class="surface-card p-6 space-y-4">
       <div class="flex items-center gap-4">
         <div class="w-16 h-16 rounded-xl bg-brand-forest flex items-center justify-center shadow-glow-md">
-          <span class="font-display font-bold text-3xl text-white">+</span>
+          <span class="font-display font-bold text-3xl t-heading">+</span>
         </div>
         <div>
-          <h4 class="font-display font-bold text-2xl text-white">+Fortes</h4>
-          <p class="font-mono text-xs text-brand-dark-muted">maisfortes.com.br</p>
+          <h4 class="font-display font-bold text-2xl t-heading">+Fortes</h4>
+          <p class="font-mono text-xs t-muted">maisfortes.com.br</p>
         </div>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-brand-dark-border/30">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t t-border/30">
         <div class="text-center p-3">
           <span class="font-display font-bold text-3xl text-brand-forest">+</span>
-          <p class="text-xs text-brand-dark-muted mt-1">Adicao</p>
+          <p class="text-xs t-muted mt-1">Adicao</p>
         </div>
         <div class="text-center p-3">
           <span class="font-display font-bold text-3xl text-brand-coral">+</span>
-          <p class="text-xs text-brand-dark-muted mt-1">Positividade</p>
+          <p class="text-xs t-muted mt-1">Positividade</p>
         </div>
         <div class="text-center p-3">
           <span class="font-display font-bold text-3xl text-brand-amber">+</span>
-          <p class="text-xs text-brand-dark-muted mt-1">Saude</p>
+          <p class="text-xs t-muted mt-1">Saude</p>
         </div>
         <div class="text-center p-3">
           <span class="font-display font-bold text-3xl text-brand-sky">+</span>
-          <p class="text-xs text-brand-dark-muted mt-1">Conexao</p>
+          <p class="text-xs t-muted mt-1">Conexao</p>
         </div>
       </div>
     </div>
@@ -182,19 +182,19 @@ import { brand } from '@/lib/brand';
   <Section number="07" title="Posicionamento" subtitle="Como nos posicionamos">
     <div class="space-y-4">
       <div class="surface-elevated p-6">
-        <p class="text-white leading-relaxed">{brand.positioning.statement}</p>
+        <p class="t-heading leading-relaxed">{brand.positioning.statement}</p>
       </div>
       <div class="surface-card p-6">
-        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-3">Inimigo da Marca</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-3">Inimigo da Marca</h4>
         <p class="font-display font-bold text-xl text-brand-coral">{brand.positioning.enemy}</p>
       </div>
       <div class="surface-card p-6">
-        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-3">Taglines</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-3">Taglines</h4>
         <div class="space-y-2">
           {brand.positioning.taglines.map((t, i) => (
             <div class="flex items-center gap-3">
               <span class="font-mono text-xs text-brand-forest">{String(i + 1).padStart(2, '0')}</span>
-              <span class:list={['font-display font-bold', i === 0 ? 'text-xl text-white' : 'text-lg text-brand-dark-muted']}>{t}</span>
+              <span class:list={['font-display font-bold', i === 0 ? 'text-xl t-heading' : 'text-lg t-muted']}>{t}</span>
             </div>
           ))}
         </div>
@@ -209,8 +209,8 @@ import { brand } from '@/lib/brand';
       <ArchetypeCard {...brand.archetypes.secondary} />
     </div>
     <div class="surface-card p-6 mt-4">
-      <h4 class="font-display font-bold text-white mb-2">A combinacao +Fortes</h4>
-      <p class="text-brand-dark-text/80 leading-relaxed">
+      <h4 class="font-display font-bold t-heading mb-2">A combinacao +Fortes</h4>
+      <p class="t-body/80 leading-relaxed">
         Cuida sem subestimar. Motiva sem pressionar. Acolhe sem ser passivo.
         O Cuidador da o abraco. O Heroi da a forca. Juntos: "Eu sei que e dificil, mas eu to aqui e voce consegue."
       </p>

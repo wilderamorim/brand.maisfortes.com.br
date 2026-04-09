@@ -47,33 +47,33 @@ const groupDescriptions = [
           </svg>
           <!-- "+" mark -->
           <div class="home-logo-mark">
-            <span class="font-display font-bold text-3xl sm:text-4xl text-white">+</span>
+            <span class="font-display font-bold text-3xl sm:text-4xl t-heading">+</span>
           </div>
         </div>
 
         <!-- Title -->
-        <h1 class="home-title font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tight">
+        <h1 class="home-title font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl t-heading leading-none tracking-tight">
           <span class="home-title-line" style="--delay: 0.2s">MAIS</span><br />
           <span class="home-title-line home-title-gradient" style="--delay: 0.4s">FORTES</span>
         </h1>
 
         <!-- Subtitle -->
         <div class="home-fade" style="--delay: 0.6s">
-          <p class="font-mono text-[10px] sm:text-sm text-brand-dark-muted tracking-widest uppercase" style="margin-top: 1.25rem;">
+          <p class="font-mono text-[10px] sm:text-sm t-muted tracking-widest uppercase" style="margin-top: 1.25rem;">
             Brand Identity System
           </p>
         </div>
 
         <!-- Tagline -->
         <div class="home-fade" style="--delay: 0.8s">
-          <p class="text-sm sm:text-lg text-brand-dark-text/80 max-w-xl mx-auto leading-relaxed" style="margin-top: 1.5rem;">
+          <p class="text-sm sm:text-lg t-body/80 max-w-xl mx-auto leading-relaxed" style="margin-top: 1.5rem;">
             {brand.purpose}
           </p>
         </div>
 
         <!-- Ticker -->
         <div class="home-fade overflow-hidden" style="--delay: 1s; margin-top: 2.5rem;">
-          <div class="flex items-center gap-6 home-ticker font-mono text-xs text-brand-dark-muted uppercase tracking-widest whitespace-nowrap">
+          <div class="flex items-center gap-6 home-ticker font-mono text-xs t-muted uppercase tracking-widest whitespace-nowrap">
             {[...Array(2)].map(() => (
               <span class="flex items-center gap-6">
                 <span>Jornada</span><span class="text-brand-forest">+</span>
@@ -91,14 +91,14 @@ const groupDescriptions = [
 
         <!-- Stats -->
         <div class="home-fade" style="--delay: 1.1s; margin-top: 2.5rem;">
-          <div class="inline-flex items-center gap-4 sm:gap-6 md:gap-10 font-mono text-[10px] sm:text-xs text-brand-dark-muted px-4 sm:px-6 py-4 rounded-lg border border-brand-dark-border/30 bg-brand-dark-surface/30 backdrop-blur-sm">
+          <div class="inline-flex items-center gap-4 sm:gap-6 md:gap-10 font-mono text-[10px] sm:text-xs t-muted px-4 sm:px-6 py-4 rounded-lg border t-border/30 t-surface/30 backdrop-blur-sm">
             <div class="text-center">
-              <span class="text-white text-xl sm:text-2xl font-display font-bold block home-counter">{totalPages}</span>
+              <span class="t-heading text-xl sm:text-2xl font-display font-bold block home-counter">{totalPages}</span>
               <span style="margin-top: 0.125rem; display: block;">paginas</span>
             </div>
             <div class="w-px h-10 bg-brand-dark-border/50"></div>
             <div class="text-center">
-              <span class="text-white text-xl sm:text-2xl font-display font-bold block home-counter">{navigation.length}</span>
+              <span class="t-heading text-xl sm:text-2xl font-display font-bold block home-counter">{navigation.length}</span>
               <span style="margin-top: 0.125rem; display: block;">categorias</span>
             </div>
             <div class="w-px h-10 bg-brand-dark-border/50"></div>
@@ -118,16 +118,16 @@ const groupDescriptions = [
               return (
               <a
                 href={href}
-                class="group home-card relative p-5 rounded-lg border border-brand-dark-border/40 bg-brand-dark-surface/40 backdrop-blur-sm hover:border-brand-forest/50 hover:bg-brand-dark-surface/60 transition-all duration-300 overflow-hidden text-left"
+                class="group home-card relative p-5 rounded-lg border t-border/40 t-surface/40 backdrop-blur-sm hover:border-brand-forest/50 hover:t-surface/60 transition-all duration-300 overflow-hidden text-left"
               >
                 <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-forest/0 to-transparent group-hover:via-brand-forest/60 transition-all duration-500"></div>
-                <div class="font-display font-bold text-sm text-white group-hover:text-brand-forest transition-colors">
+                <div class="font-display font-bold text-sm t-heading group-hover:text-brand-forest transition-colors">
                   {nav.group}
                 </div>
-                <div class="font-mono text-[10px] text-brand-dark-muted" style="margin-top: 0.25rem;">
+                <div class="font-mono text-[10px] t-muted" style="margin-top: 0.25rem;">
                   {groupDescriptions[i]}
                 </div>
-                <div class="font-mono text-[10px] text-brand-dark-muted/60" style="margin-top: 0.5rem;">
+                <div class="font-mono text-[10px] t-muted/60" style="margin-top: 0.5rem;">
                   {nav.pages.length} paginas
                 </div>
                 <svg class="absolute bottom-3 right-3 w-4 h-4 text-brand-dark-border group-hover:text-brand-forest/50 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -139,7 +139,7 @@ const groupDescriptions = [
 
       <!-- Footer -->
       <div class="home-fade" style="--delay: 1.5s; margin-top: auto; padding-top: 3rem; padding-bottom: 1rem;">
-        <div class="font-mono text-[10px] text-brand-dark-muted text-center tracking-wider">
+        <div class="font-mono text-[10px] t-muted text-center tracking-wider">
           Brand Identity System <span class="text-brand-dark-border">//</span> v{brand.version} <span class="text-brand-dark-border">//</span> {brand.year} <span class="text-brand-dark-border">//</span> {brand.edition}
         </div>
       </div>
