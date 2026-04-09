@@ -14,13 +14,13 @@ const { number, title, href, active = false } = Astro.props;
   class:list={[
     'group flex items-center gap-3 px-4 py-2 text-sm transition-all duration-200',
     active
-      ? 'text-white bg-brand-forest/15 border-l-2 border-brand-forest'
-      : 'text-brand-dark-muted hover:text-brand-dark-text hover:bg-brand-dark-surface/50 border-l-2 border-transparent',
+      ? 't-heading border-l-2 border-brand-forest nav-item-active'
+      : 't-muted border-l-2 border-transparent nav-item-inactive',
   ]}
 >
   <span class:list={[
     'font-mono text-xs w-8 shrink-0',
-    active ? 'text-brand-forest' : 'text-brand-dark-muted/60 group-hover:text-brand-dark-muted',
+    active ? 'text-brand-forest' : 't-muted opacity-60 group-hover:opacity-100',
   ]}>
     {number}
   </span>

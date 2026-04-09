@@ -2,13 +2,13 @@
 import { brand } from '@/lib/brand';
 ---
 
-<footer class="mt-24 border-t border-brand-dark-border/50 py-8">
+<footer class="mt-24 py-8" style="border-top: 1px solid var(--theme-border-alpha);">
   <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="font-mono text-xs text-brand-dark-muted tracking-wider">
-      Brand Identity System <span class="text-brand-dark-border">//</span> v{brand.version} <span class="text-brand-dark-border">//</span> {brand.name}
+    <div class="font-mono text-xs t-muted tracking-wider">
+      Brand Identity System <span class="opacity-30">//</span> v{brand.version} <span class="opacity-30">//</span> {brand.name}
     </div>
     <div class="flex items-center gap-6">
-      <a href={brand.ecosystem.website.url} target="_blank" rel="noopener" class="text-brand-dark-muted hover:text-brand-forest transition-colors text-xs font-mono">
+      <a href={brand.ecosystem.website.url} target="_blank" rel="noopener" class="t-muted hover:text-brand-forest transition-colors text-xs font-mono">
         Website
       </a>
     </div>

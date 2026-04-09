@@ -10,13 +10,13 @@ const { number, title, subtitle, id } = Astro.props;
 const sectionId = id || `section-${number.replace('.', '-')}`;
 ---
 
-<section id={sectionId} class="py-16 border-t border-brand-dark-border/30">
+<section id={sectionId} class="py-16" style="border-top: 1px solid var(--theme-border-subtle);">
   <div class="flex items-baseline gap-4 mb-8">
     <span class="section-number shrink-0">{number}</span>
     <div>
-      <h2 class="font-display font-bold text-2xl md:text-3xl text-white">{title}</h2>
+      <h2 class="font-display font-bold text-2xl md:text-3xl t-heading">{title}</h2>
       {subtitle && (
-        <p class="mt-1 text-sm text-brand-dark-muted">{subtitle}</p>
+        <p class="mt-1 text-sm t-muted">{subtitle}</p>
       )}
     </div>
   </div>
