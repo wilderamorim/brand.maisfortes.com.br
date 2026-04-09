@@ -6,16 +6,16 @@ import Section from '@/components/layout/Section.astro';
 <BrandbookLayout
   pageNumber="5.0"
   pageTitle="Moodboard"
-  pageSubtitle="Referencias visuais e influencias que moldam a identidade +Fortes."
+  pageSubtitle="Referências visuais e influências que moldam a identidade +Fortes."
   sectionsCount={3}
 >
 
   <Section number="01" title="Atmosfera Visual" subtitle="O mood que buscamos">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {[
-        { title: 'Warmth & Connection', desc: 'Luz natural, tons quentes, pessoas reais conectadas. Nada clinico ou frio.', tags: ['golden hour', 'candid', 'warm tones'] },
-        { title: 'Strength & Growth', desc: 'Natureza, verde profundo, raizes fortes. Forca vem de dentro e do coletivo.', tags: ['forest', 'organic', 'grounded'] },
-        { title: 'Simplicity & Calm', desc: 'Interfaces limpas, espacamento generoso, sem ruido visual. Paz.', tags: ['minimal', 'whitespace', 'soft UI'] },
+        { title: 'Warmth & Connection', desc: 'Luz natural, tons quentes, pessoas reais conectadas. Nada clínico ou frio.', tags: ['golden hour', 'candid', 'warm tones'] },
+        { title: 'Strength & Growth', desc: 'Natureza, verde profundo, raízes fortes. Força vem de dentro e do coletivo.', tags: ['forest', 'organic', 'grounded'] },
+        { title: 'Simplicity & Calm', desc: 'Interfaces limpas, espaçamento generoso, sem ruído visual. Paz.', tags: ['minimal', 'whitespace', 'soft UI'] },
       ].map((ref) => (
         <div class="surface-elevated p-6 space-y-3">
           <h4 class="font-display font-bold t-heading">{ref.title}</h4>
@@ -33,10 +33,10 @@ import Section from '@/components/layout/Section.astro';
   <Section number="02" title="Paleta Emocional" subtitle="Cores e o que elas transmitem">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
       {[
-        { color: '#2D6A4F', emotion: 'Crescimento', desc: 'Estabilidade, saude, confianca' },
-        { color: '#40916C', emotion: 'Esperanca', desc: 'Progresso, renovacao' },
-        { color: '#F4845F', emotion: 'Calor humano', desc: 'Acolhimento, afeto, presenca' },
-        { color: '#FFB703', emotion: 'Celebracao', desc: 'Conquista, alegria, luz' },
+        { color: '#2D6A4F', emotion: 'Crescimento', desc: 'Estabilidade, saúde, confiança' },
+        { color: '#40916C', emotion: 'Esperança', desc: 'Progresso, renovação' },
+        { color: '#F4845F', emotion: 'Calor humano', desc: 'Acolhimento, afeto, presença' },
+        { color: '#FFB703', emotion: 'Celebração', desc: 'Conquista, alegria, luz' },
       ].map((item) => (
         <div class="surface-card overflow-hidden">
           <div class="h-24" style={`background: ${item.color};`}></div>
@@ -49,13 +49,13 @@ import Section from '@/components/layout/Section.astro';
     </div>
   </Section>
 
-  <Section number="03" title="Referencias de Interface" subtitle="Apps e produtos que inspiram">
+  <Section number="03" title="Referências de Interface" subtitle="Apps e produtos que inspiram">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {[
-        { name: 'Headspace', influence: 'Simplicidade extrema, ilustracoes calmas, onboarding gentil', tags: ['calm UI', 'illustration', 'onboarding'] },
-        { name: 'Strava', influence: 'Social accountability, streaks, celebracao de consistencia', tags: ['streaks', 'social', 'progress'] },
-        { name: 'Daylio', influence: 'Check-in com mood, interface de diario minimalista', tags: ['mood tracking', 'daily', 'minimal'] },
-        { name: 'Noom', influence: 'Mudanca comportamental guiada, tom conversacional', tags: ['behavior change', 'conversational', 'coaching'] },
+        { name: 'Headspace', influence: 'Simplicidade extrema, ilustrações calmas, onboarding gentil', tags: ['calm UI', 'illustration', 'onboarding'] },
+        { name: 'Strava', influence: 'Social accountability, streaks, celebração de consistência', tags: ['streaks', 'social', 'progress'] },
+        { name: 'Daylio', influence: 'Check-in com mood, interface de diário minimalista', tags: ['mood tracking', 'daily', 'minimal'] },
+        { name: 'Noom', influence: 'Mudança comportamental guiada, tom conversacional', tags: ['behavior change', 'conversational', 'coaching'] },
       ].map((ref) => (
         <div class="surface-card p-5 space-y-2">
           <h4 class="font-display font-bold t-heading">{ref.name}</h4>

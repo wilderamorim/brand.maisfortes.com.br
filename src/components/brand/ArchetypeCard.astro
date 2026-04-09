@@ -31,7 +31,7 @@ const { name, desire, goal, fear, strategy, gift, shadow, brands, isPrimary = fa
         'font-mono text-[10px] uppercase tracking-widest',
         isPrimary ? 'text-brand-forest' : 'text-brand-coral',
       ]}>
-        {isPrimary ? 'Primario' : 'Secundario'}
+        {isPrimary ? 'Primário' : 'Secundário'}
       </span>
     </div>
   </div>
@@ -40,13 +40,13 @@ const { name, desire, goal, fear, strategy, gift, shadow, brands, isPrimary = fa
     <div><span class="text-brand-dark-muted text-xs block mb-0.5">Desejo</span><span class="text-brand-dark-text">{desire}</span></div>
     <div><span class="text-brand-dark-muted text-xs block mb-0.5">Objetivo</span><span class="text-brand-dark-text">{goal}</span></div>
     <div><span class="text-brand-dark-muted text-xs block mb-0.5">Medo</span><span class="text-brand-dark-text">{fear}</span></div>
-    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Estrategia</span><span class="text-brand-dark-text">{strategy}</span></div>
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Estratégia</span><span class="text-brand-dark-text">{strategy}</span></div>
     <div><span class="text-brand-dark-muted text-xs block mb-0.5">Dom</span><span class="text-brand-dark-text">{gift}</span></div>
     <div><span class="text-brand-dark-muted text-xs block mb-0.5">Sombra</span><span class="text-brand-dark-text">{shadow}</span></div>
   </div>
 
   <div>
-    <span class="text-brand-dark-muted text-xs block mb-1">Marcas de referencia</span>
+    <span class="text-brand-dark-muted text-xs block mb-1">Marcas de referência</span>
     <div class="flex flex-wrap gap-2">
       {brands.map((b) => (
         <span class="font-mono text-xs px-2 py-1 rounded bg-brand-dark-border/30 text-brand-dark-muted">{b}</span>

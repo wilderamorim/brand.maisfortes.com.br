@@ -7,7 +7,7 @@ import { brand } from '@/lib/brand';
 <BrandbookLayout
   pageNumber="1.0"
   pageTitle="Movimento"
-  pageSubtitle="Estrategia completa da marca: manifesto, proposito, BrandScript, voz e contrato."
+  pageSubtitle="Estratégia completa da marca: manifesto, propósito, BrandScript, voz e contrato."
   sectionsCount={7}
 >
 
@@ -15,12 +15,12 @@ import { brand } from '@/lib/brand';
   <Section number="01" title="Manifesto">
     <div class="surface-elevated p-8 md:p-12 space-y-6">
       <p class="font-display font-bold text-3xl md:text-4xl t-heading leading-snug">
-        Ninguem muda sozinho.
+        Ninguém muda sozinho.
       </p>
       <div class="t-body/80 leading-relaxed space-y-4 max-w-3xl text-lg">
-        <p>A gente sabe que a mudanca e dificil. Que tem dia que voce nao vai querer nem abrir o app. Que a vontade de desistir aparece mais do que a vontade de continuar.</p>
-        <p>Mas a gente sabe tambem que quando alguem esta olhando por voce — de verdade, sem julgamento, sem cobranca pesada — fica mais facil dar o proximo passo.</p>
-        <p>+Fortes existe porque acreditamos que as pessoas ao redor de quem esta lutando por uma mudanca precisam de um papel claro: estar junto sem invadir, apoiar sem sufocar, celebrar sem exagerar.</p>
+        <p>A gente sabe que a mudança é difícil. Que tem dia que você não vai querer nem abrir o app. Que a vontade de desistir aparece mais do que a vontade de continuar.</p>
+        <p>Mas a gente sabe também que quando alguém está olhando por você — de verdade, sem julgamento, sem cobrança pesada — fica mais fácil dar o próximo passo.</p>
+        <p>+Fortes existe porque acreditamos que as pessoas ao redor de quem está lutando por uma mudança precisam de um papel claro: estar junto sem invadir, apoiar sem sufocar, celebrar sem exagerar.</p>
         <p class="font-display font-bold text-xl text-brand-forest">Porque juntos, somos +Fortes.</p>
       </div>
     </div>
@@ -38,7 +38,7 @@ import { brand } from '@/lib/brand';
         <div class="space-y-1 mt-2">
           <p class="text-sm"><span class="t-muted">Externo:</span> <span class="t-heading">{brand.brandscript.problem.external}</span></p>
           <p class="text-sm"><span class="t-muted">Interno:</span> <span class="t-heading">{brand.brandscript.problem.internal}</span></p>
-          <p class="text-sm"><span class="t-muted">Filosofico:</span> <span class="t-heading">{brand.brandscript.problem.philosophical}</span></p>
+          <p class="text-sm"><span class="t-muted">Filosófico:</span> <span class="t-heading">{brand.brandscript.problem.philosophical}</span></p>
         </div>
       </div>
       <div class="surface-card p-5 space-y-2">
@@ -57,7 +57,7 @@ import { brand } from '@/lib/brand';
         </ol>
       </div>
       <div class="surface-card p-5">
-        <span class="font-mono text-xs text-brand-forest">05 — Chamada a Acao</span>
+        <span class="font-mono text-xs text-brand-forest">05 — Chamada à Ação</span>
         <div class="mt-2 space-y-2">
           <div class="inline-block px-4 py-2 bg-brand-forest rounded-lg t-heading text-sm font-semibold">{brand.brandscript.cta.direct}</div>
           <p class="text-sm t-muted">{brand.brandscript.cta.transitional}</p>
@@ -88,7 +88,7 @@ import { brand } from '@/lib/brand';
         </div>
       </div>
       <div class="surface-card p-6">
-        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-4">Nao somos</h4>
+        <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-4">Não somos</h4>
         <div class="flex flex-wrap gap-2">
           {brand.voice.doNot.map((t) => (
             <span class="px-3 py-1.5 rounded-full bg-brand-coral/10 text-brand-coral text-sm border border-brand-coral/20">{t}</span>
@@ -109,17 +109,17 @@ import { brand } from '@/lib/brand';
   </Section>
 
   <!-- 04 Tom por contexto -->
-  <Section number="04" title="Tom por Contexto" subtitle="Exemplos reais de comunicacao">
+  <Section number="04" title="Tom por Contexto" subtitle="Exemplos reais de comunicação">
     <div class="space-y-4">
       {[
-        { context: 'Check-in — Score 5', msg: 'Dia incrivel! Sua rede vai adorar ver isso.', tone: 'Celebracao' },
-        { context: 'Check-in — Score 3', msg: 'Tudo bem. Nem todo dia precisa ser incrivel.', tone: 'Acolhimento' },
-        { context: 'Check-in — Score 1', msg: 'Dias assim fazem parte. Amanha e um novo dia. Sua rede esta com voce.', tone: 'Empatia' },
-        { context: 'Streak 7 dias', msg: '1 semana! Voce ta criando um habito.', tone: 'Motivacao' },
-        { context: 'Streak quebrado', msg: 'Tudo bem. O importante e voltar. Bora?', tone: 'Leveza' },
-        { context: 'Convite para apoiador', msg: '[Nome] confiou em voce para acompanhar essa jornada.', tone: 'Confianca' },
-        { context: 'Alerta de inatividade', msg: '[Nome] nao fez check-in ha 2 dias. Que tal mandar uma mensagem?', tone: 'Cuidado' },
-        { context: 'Boas-vindas', msg: 'Bem-vindo ao +Fortes. Aqui, ninguem muda sozinho.', tone: 'Acolhimento' },
+        { context: 'Check-in — Score 5', msg: 'Dia incrível! Sua rede vai adorar ver isso.', tone: 'Celebração' },
+        { context: 'Check-in — Score 3', msg: 'Tudo bem. Nem todo dia precisa ser incrível.', tone: 'Acolhimento' },
+        { context: 'Check-in — Score 1', msg: 'Dias assim fazem parte. Amanhã é um novo dia. Sua rede está com você.', tone: 'Empatia' },
+        { context: 'Streak 7 dias', msg: '1 semana! Você tá criando um hábito.', tone: 'Motivação' },
+        { context: 'Streak quebrado', msg: 'Tudo bem. O importante é voltar. Bora?', tone: 'Leveza' },
+        { context: 'Convite para apoiador', msg: '[Nome] confiou em você para acompanhar essa jornada.', tone: 'Confiança' },
+        { context: 'Alerta de inatividade', msg: '[Nome] não fez check-in há 2 dias. Que tal mandar uma mensagem?', tone: 'Cuidado' },
+        { context: 'Boas-vindas', msg: 'Bem-vindo ao +Fortes. Aqui, ninguém muda sozinho.', tone: 'Acolhimento' },
       ].map((item) => (
         <div class="surface-card p-4 flex flex-col md:flex-row md:items-center gap-3">
           <div class="shrink-0 w-40">
@@ -137,7 +137,7 @@ import { brand } from '@/lib/brand';
   </Section>
 
   <!-- 05 Usuarios -->
-  <Section number="05" title="Usuarios" subtitle="Quem usa o +Fortes">
+  <Section number="05" title="Usuários" subtitle="Quem usa o +Fortes">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {Object.values(brand.users).map((u) => (
         <div class="surface-card p-5 space-y-2">
@@ -149,19 +149,19 @@ import { brand } from '@/lib/brand';
   </Section>
 
   <!-- 06 Vocabulario -->
-  <Section number="06" title="Vocabulario" subtitle="Palavras que usamos e evitamos">
+  <Section number="06" title="Vocabulário" subtitle="Palavras que usamos e evitamos">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="surface-card p-6">
         <h4 class="font-mono text-xs text-brand-forest uppercase tracking-widest mb-4">Usamos</h4>
         <div class="space-y-2">
           {[
-            ['Protagonista', 'Quem esta na jornada'],
+            ['Protagonista', 'Quem está na jornada'],
             ['Apoiador', 'Quem acompanha'],
-            ['Check-in', 'Registro diario'],
-            ['Jornada', 'O processo de mudanca'],
-            ['Streak', 'Sequencia de dias'],
-            ['Dia dificil', 'Em vez de "falha"'],
-            ['Tropeco', 'Em vez de "recaida"'],
+            ['Check-in', 'Registro diário'],
+            ['Jornada', 'O processo de mudança'],
+            ['Streak', 'Sequência de dias'],
+            ['Dia difícil', 'Em vez de "falha"'],
+            ['Tropeço', 'Em vez de "recaída"'],
           ].map(([word, meaning]) => (
             <div class="flex items-center gap-3">
               <span class="text-sm font-semibold t-heading w-28">{word}</span>
@@ -177,10 +177,10 @@ import { brand } from '@/lib/brand';
             ['Paciente', 'Usar "protagonista"'],
             ['Monitorar', 'Usar "acompanhar"'],
             ['Controle', 'Usar "acompanhamento"'],
-            ['Fracasso', 'Usar "dia dificil"'],
-            ['Recaida', 'Usar "tropeco"'],
+            ['Fracasso', 'Usar "dia difícil"'],
+            ['Recaída', 'Usar "tropeço"'],
             ['Viciado', 'Usar "pessoa em jornada"'],
-            ['Supervisao', 'Usar "presenca"'],
+            ['Supervisão', 'Usar "presença"'],
           ].map(([word, alt]) => (
             <div class="flex items-center gap-3">
               <span class="text-sm text-brand-coral line-through w-28">{word}</span>
@@ -201,9 +201,9 @@ import { brand } from '@/lib/brand';
           {[
             'Coloca o protagonista no controle',
             'Trata dias ruins com acolhimento',
-            'Mantem dados privados por padrao',
+            'Mantém dados privados por padrão',
             'Usa linguagem simples e humana',
-            'Celebra consistencia, nao perfeicao',
+            'Celebra consistência, não perfeição',
           ].map((item) => (
             <li class="flex items-start gap-2 text-sm t-heading">
               <span class="text-brand-forest mt-0.5">+</span>
@@ -218,10 +218,10 @@ import { brand } from '@/lib/brand';
           {[
             'Julga o protagonista',
             'Compartilha dados sem consentimento',
-            'Usa linguagem clinica',
+            'Usa linguagem clínica',
             'Gamifica o sofrimento',
             'Pressiona para performance',
-            'Vende dados ou mostra anuncios',
+            'Vende dados ou mostra anúncios',
           ].map((item) => (
             <li class="flex items-start gap-2 text-sm t-muted">
               <span class="text-brand-coral mt-0.5">-</span>

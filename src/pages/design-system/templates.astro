@@ -10,7 +10,7 @@ import Section from '@/components/layout/Section.astro';
   sectionsCount={3}
 >
 
-  <Section number="01" title="Page Shell" subtitle="Estrutura padrao de pagina">
+  <Section number="01" title="Page Shell" subtitle="Estrutura padrão de página">
     <div class="surface-card p-4 rounded-[16px] overflow-hidden">
       <div class="border t-border/30 rounded-lg overflow-hidden">
         <!-- Nav mock -->
@@ -85,13 +85,13 @@ import Section from '@/components/layout/Section.astro';
     </div>
   </Section>
 
-  <Section number="03" title="Onboarding Flow" subtitle="Sequencia de primeiro uso">
+  <Section number="03" title="Onboarding Flow" subtitle="Sequência de primeiro uso">
     <div class="flex flex-col md:flex-row gap-4">
       {[
         { step: '1', title: 'Boas-vindas', desc: 'Bem-vindo ao +Fortes', icon: '👋' },
-        { step: '2', title: 'Criar meta', desc: 'Qual e sua jornada?', icon: '🎯' },
-        { step: '3', title: 'Convidar', desc: 'Quem caminha com voce?', icon: '👥' },
-        { step: '4', title: 'Primeiro check-in', desc: 'Como esta se sentindo?', icon: '✨' },
+        { step: '2', title: 'Criar meta', desc: 'Qual é sua jornada?', icon: '🎯' },
+        { step: '3', title: 'Convidar', desc: 'Quem caminha com você?', icon: '👥' },
+        { step: '4', title: 'Primeiro check-in', desc: 'Como está se sentindo?', icon: '✨' },
       ].map((s, i) => (
         <div class="flex-1 surface-card p-5 text-center relative">
           {i < 3 && <div class="hidden md:block absolute top-1/2 -right-2 w-4 text-brand-dark-border z-10">→</div>}

@@ -6,17 +6,17 @@ import Section from '@/components/layout/Section.astro';
 <BrandbookLayout
   pageNumber="6.0"
   pageTitle="Tom de Voz"
-  pageSubtitle="Guia de copywriting, exemplos e regras de comunicacao da marca."
+  pageSubtitle="Guia de copywriting, exemplos e regras de comunicação da marca."
   sectionsCount={4}
 >
 
-  <Section number="01" title="Principios de Escrita" subtitle="Como escrevemos">
+  <Section number="01" title="Princípios de Escrita" subtitle="Como escrevemos">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {[
         { title: 'Curto e direto', example: '"Ei, como foi hoje?" em vez de "Gostaríamos de saber como foi o seu dia de hoje."' },
-        { title: 'Primeira pessoa do plural', example: '"Juntos, somos +Fortes" — sempre coletivo, nunca solitario.' },
-        { title: 'Sem jargao clinico', example: '"Dia dificil" em vez de "episodio de recaida". "Tropeco" em vez de "falha".' },
-        { title: 'Acolhimento antes de acao', example: '"Tudo bem. O importante e voltar." — primeiro valida, depois motiva.' },
+        { title: 'Primeira pessoa do plural', example: '"Juntos, somos +Fortes" — sempre coletivo, nunca solitário.' },
+        { title: 'Sem jargão clínico', example: '"Dia difícil" em vez de "episódio de recaída". "Tropeço" em vez de "falha".' },
+        { title: 'Acolhimento antes de ação', example: '"Tudo bem. O importante é voltar." — primeiro valida, depois motiva.' },
       ].map((p) => (
         <div class="surface-card p-5 space-y-2">
           <h4 class="font-display font-bold t-heading">{p.title}</h4>
@@ -29,11 +29,11 @@ import Section from '@/components/layout/Section.astro';
   <Section number="02" title="Reescrita de Exemplos" subtitle="Antes vs. Depois">
     <div class="space-y-3">
       {[
-        { before: 'Voce falhou no check-in de ontem.', after: 'Ontem passou sem check-in. Tudo bem — hoje e um novo dia.' },
-        { before: 'Parabens! Voce completou 7 dias sem recaida!', after: '1 semana firme! Voce ta criando um habito.' },
+        { before: 'Você falhou no check-in de ontem.', after: 'Ontem passou sem check-in. Tudo bem — hoje é um novo dia.' },
+        { before: 'Parabéns! Você completou 7 dias sem recaída!', after: '1 semana firme! Você tá criando um hábito.' },
         { before: 'Seu monitor Maria foi notificado da sua inatividade.', after: 'Maria sentiu sua falta. Que tal fazer o check-in de hoje?' },
-        { before: 'Erro ao processar requisicao. Tente novamente mais tarde.', after: 'Algo deu errado. Tenta de novo?' },
-        { before: 'Cadastro realizado com sucesso. Bem-vindo a plataforma.', after: 'Pronto! Sua jornada comeca agora.' },
+        { before: 'Erro ao processar requisição. Tente novamente mais tarde.', after: 'Algo deu errado. Tenta de novo?' },
+        { before: 'Cadastro realizado com sucesso. Bem-vindo à plataforma.', after: 'Pronto! Sua jornada começa agora.' },
       ].map((item) => (
         <div class="surface-card p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -49,12 +49,12 @@ import Section from '@/components/layout/Section.astro';
     </div>
   </Section>
 
-  <Section number="03" title="Tom por Canal" subtitle="Adaptacao de voz por contexto">
+  <Section number="03" title="Tom por Canal" subtitle="Adaptação de voz por contexto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {[
-        { canal: 'App (UI)', tom: 'Intimo, curto', exemplo: '"Como foi hoje?"', nota: 'Maximo 2 linhas por mensagem' },
-        { canal: 'Push notification', tom: 'Gentil, nao invasivo', exemplo: '"Seu check-in esta disponivel"', nota: 'Nunca culpar ou pressionar' },
-        { canal: 'Email', tom: 'Caloroso, pessoal', exemplo: '"Oi [nome], sua semana foi incrivel"', nota: 'Sempre personalizado com nome' },
+        { canal: 'App (UI)', tom: 'Íntimo, curto', exemplo: '"Como foi hoje?"', nota: 'Máximo 2 linhas por mensagem' },
+        { canal: 'Push notification', tom: 'Gentil, não invasivo', exemplo: '"Seu check-in está disponível"', nota: 'Nunca culpar ou pressionar' },
+        { canal: 'Email', tom: 'Caloroso, pessoal', exemplo: '"Oi [nome], sua semana foi incrível"', nota: 'Sempre personalizado com nome' },
       ].map((c) => (
         <div class="surface-card p-5 space-y-3">
           <h4 class="font-display font-bold t-heading">{c.canal}</h4>
@@ -70,11 +70,11 @@ import Section from '@/components/layout/Section.astro';
     <div class="surface-card p-6">
       <ul class="space-y-3">
         {[
-          'Parece um amigo falando? (nao uma empresa)',
-          'E curto o suficiente? (corte pela metade)',
+          'Parece um amigo falando? (não uma empresa)',
+          'É curto o suficiente? (corte pela metade)',
           'Acolhe antes de cobrar?',
           'Evita palavras da lista "Evitamos"?',
-          'Um protagonista em dia dificil se sentiria julgado lendo isso?',
+          'Um protagonista em dia difícil se sentiria julgado lendo isso?',
           'Um apoiador saberia o que fazer ao ler isso?',
         ].map((item) => (
           <li class="flex items-start gap-3 text-sm">

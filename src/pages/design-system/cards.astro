@@ -11,7 +11,7 @@ import Section from '@/components/layout/Section.astro';
 >
 
   <!-- 01 Check-in Card -->
-  <Section number="01" title="Check-in Card" subtitle="Componente core — registro diario">
+  <Section number="01" title="Check-in Card" subtitle="Componente core — registro diário">
     <div class="max-w-md mx-auto">
       <div class="surface-elevated p-6 rounded-[20px] space-y-5">
         <div class="flex items-center justify-between">
@@ -21,11 +21,11 @@ import Section from '@/components/layout/Section.astro';
         <h3 class="font-display font-bold text-lg t-heading">Como foi seu dia?</h3>
         <div class="flex justify-between">
           {[
-            { emoji: '😔', label: 'Dificil', color: 'bg-brand-coral' },
+            { emoji: '😔', label: 'Difícil', color: 'bg-brand-coral' },
             { emoji: '😕', label: 'Complicado', color: 'bg-brand-coral-light' },
             { emoji: '😐', label: 'Normal', color: 'bg-brand-dark-border' },
             { emoji: '🙂', label: 'Bom', color: 'bg-brand-forest-200' },
-            { emoji: '😊', label: 'Otimo', color: 'bg-brand-forest' },
+            { emoji: '😊', label: 'Ótimo', color: 'bg-brand-forest' },
           ].map((score, i) => (
             <button class:list={[
               'flex flex-col items-center gap-1 p-2 rounded-xl transition-all',
@@ -49,7 +49,7 @@ import Section from '@/components/layout/Section.astro';
   </Section>
 
   <!-- 02 Streak Card -->
-  <Section number="02" title="Streak Card" subtitle="Sequencia de dias">
+  <Section number="02" title="Streak Card" subtitle="Sequência de dias">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <!-- Active streak -->
       <div class="surface-elevated p-6 rounded-[20px] text-center shadow-glow">
@@ -59,11 +59,11 @@ import Section from '@/components/layout/Section.astro';
           <span class="text-2xl">🔥</span>
         </div>
         <p class="font-body text-sm t-muted mt-1">dias seguidos</p>
-        <span class="inline-block mt-3 px-3 py-1 rounded-full bg-brand-amber/15 text-brand-amber text-xs font-mono">1 mes!</span>
+        <span class="inline-block mt-3 px-3 py-1 rounded-full bg-brand-amber/15 text-brand-amber text-xs font-mono">1 mês!</span>
       </div>
       <!-- Early streak -->
       <div class="surface-card p-6 rounded-[20px] text-center">
-        <span class="font-mono text-[10px] t-muted uppercase tracking-widest">Comecando</span>
+        <span class="font-mono text-[10px] t-muted uppercase tracking-widest">Começando</span>
         <div class="flex items-center justify-center gap-2 mt-2">
           <span class="font-mono font-bold text-5xl t-heading">3</span>
         </div>

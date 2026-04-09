@@ -6,13 +6,13 @@ import Section from '@/components/layout/Section.astro';
 <BrandbookLayout
   pageNumber="6.0"
   pageTitle="Charts"
-  pageSubtitle="Visualizacoes de progresso, streak calendar e historico de scores."
+  pageSubtitle="Visualizações de progresso, streak calendar e histórico de scores."
   sectionsCount={3}
 >
 
-  <Section number="01" title="Score History" subtitle="Historico semanal de check-ins">
+  <Section number="01" title="Score History" subtitle="Histórico semanal de check-ins">
     <div class="surface-card p-6 max-w-lg">
-      <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-4">Ultima semana</h4>
+      <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-4">Última semana</h4>
       <div class="flex items-end justify-between gap-2 h-40">
         {[
           { day: 'Seg', score: 4, color: 'bg-brand-forest' },
@@ -33,7 +33,7 @@ import Section from '@/components/layout/Section.astro';
     </div>
   </Section>
 
-  <Section number="02" title="Streak Calendar" subtitle="Visualizacao mensal de consistencia">
+  <Section number="02" title="Streak Calendar" subtitle="Visualização mensal de consistência">
     <div class="surface-card p-6 max-w-md">
       <div class="flex items-center justify-between mb-4">
         <h4 class="font-display font-bold t-heading">Abril 2026</h4>
@@ -62,16 +62,16 @@ import Section from '@/components/layout/Section.astro';
     </div>
   </Section>
 
-  <Section number="03" title="Mood Distribution" subtitle="Distribuicao de humor no periodo">
+  <Section number="03" title="Mood Distribution" subtitle="Distribuição de humor no período">
     <div class="surface-card p-6 max-w-md">
-      <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-4">Ultimos 30 dias</h4>
+      <h4 class="font-mono text-xs t-muted uppercase tracking-widest mb-4">Últimos 30 dias</h4>
       <div class="space-y-3">
         {[
-          { emoji: '😊', label: 'Otimo', count: 12, pct: 40, color: 'bg-brand-forest' },
+          { emoji: '😊', label: 'Ótimo', count: 12, pct: 40, color: 'bg-brand-forest' },
           { emoji: '🙂', label: 'Bom', count: 10, pct: 33, color: 'bg-brand-forest-light' },
           { emoji: '😐', label: 'Normal', count: 5, pct: 17, color: 'bg-brand-dark-border' },
           { emoji: '😕', label: 'Complicado', count: 2, pct: 7, color: 'bg-brand-coral-light' },
-          { emoji: '😔', label: 'Dificil', count: 1, pct: 3, color: 'bg-brand-coral' },
+          { emoji: '😔', label: 'Difícil', count: 1, pct: 3, color: 'bg-brand-coral' },
         ].map((mood) => (
           <div class="flex items-center gap-3">
             <span class="text-lg w-8">{mood.emoji}</span>
