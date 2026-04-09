@@ -1,0 +1,39 @@
+---
+import NavItem from './NavItem.astro';
+import type { NavPage } from '@/lib/navigation';
+
+interface Props {
+  group: string;
+  groupSlug: string;
+  pages: NavPage[];
+  currentPath: string;
+}
+
+const { group, groupSlug, pages, currentPath } = Astro.props;
+
+function isActive(pageSlug: string): boolean {
+  const pagePath = pageSlug === '' ? `/${groupSlug}/` : `/${groupSlug}/${pageSlug}/`;
+  return currentPath === pagePath || currentPath === pagePath.slice(0, -1);
+}
+
+const groupActive = currentPath.startsWith(`/${groupSlug}`);
+---
+
+<div class="mb-2">
+  <div class:list={[
+    'px-4 py-2 text-xs font-mono uppercase tracking-widest',
+    groupActive ? 'text-brand-forest' : 'text-brand-dark-muted',
+  ]}>
+    {group}
+  </div>
+  <nav>
+    {pages.map((page) => (
+      <NavItem
+        number={page.number}
+        title={page.title}
+        href={page.slug === '' ? `/${groupSlug}/` : `/${groupSlug}/${page.slug}/`}
+        active={isActive(page.slug)}
+      />
+    ))}
+  </nav>
+</div>

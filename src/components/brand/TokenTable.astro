@@ -1,0 +1,38 @@
+---
+interface TokenRow {
+  token: string;
+  value: string;
+  preview?: string;
+}
+
+interface Props {
+  title: string;
+  tokens: TokenRow[];
+}
+
+const { title, tokens } = Astro.props;
+---
+
+<div class="surface-card overflow-hidden">
+  <div class="px-4 py-3 border-b border-brand-dark-border/30">
+    <h4 class="font-body font-semibold text-sm text-white">{title}</h4>
+  </div>
+  <table class="w-full text-sm">
+    <thead>
+      <tr class="border-b border-brand-dark-border/20">
+        <th class="px-4 py-2 text-left font-mono text-xs text-brand-dark-muted font-normal">Token</th>
+        <th class="px-4 py-2 text-left font-mono text-xs text-brand-dark-muted font-normal">Value</th>
+        {tokens[0]?.preview && <th class="px-4 py-2 text-left font-mono text-xs text-brand-dark-muted font-normal">Preview</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {tokens.map((t) => (
+        <tr class="border-b border-brand-dark-border/10 last:border-0">
+          <td class="px-4 py-2 font-mono text-xs text-brand-forest">{t.token}</td>
+          <td class="px-4 py-2 font-mono text-xs text-brand-dark-muted">{t.value}</td>
+          {t.preview && <td class="px-4 py-2"><div class="h-4 w-16 rounded" style={`background:${t.preview}`} /></td>}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

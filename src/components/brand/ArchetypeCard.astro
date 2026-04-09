@@ -1,0 +1,56 @@
+---
+interface Props {
+  name: string;
+  desire: string;
+  goal: string;
+  fear: string;
+  strategy: string;
+  gift: string;
+  shadow: string;
+  brands: string[];
+  isPrimary?: boolean;
+}
+
+const { name, desire, goal, fear, strategy, gift, shadow, brands, isPrimary = false } = Astro.props;
+---
+
+<div class:list={[
+  'surface-card p-6 space-y-4',
+  isPrimary ? 'border-brand-forest/40' : 'border-brand-coral/30',
+]}>
+  <div class="flex items-center gap-3">
+    <div class:list={[
+      'w-10 h-10 rounded-lg flex items-center justify-center font-display font-bold text-white text-lg',
+      isPrimary ? 'bg-brand-forest shadow-glow' : 'bg-brand-coral shadow-glow-coral',
+    ]}>
+      {name[0]}
+    </div>
+    <div>
+      <h4 class="font-display font-bold text-lg text-white">{name}</h4>
+      <span class:list={[
+        'font-mono text-[10px] uppercase tracking-widest',
+        isPrimary ? 'text-brand-forest' : 'text-brand-coral',
+      ]}>
+        {isPrimary ? 'Primario' : 'Secundario'}
+      </span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-3 text-sm">
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Desejo</span><span class="text-brand-dark-text">{desire}</span></div>
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Objetivo</span><span class="text-brand-dark-text">{goal}</span></div>
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Medo</span><span class="text-brand-dark-text">{fear}</span></div>
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Estrategia</span><span class="text-brand-dark-text">{strategy}</span></div>
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Dom</span><span class="text-brand-dark-text">{gift}</span></div>
+    <div><span class="text-brand-dark-muted text-xs block mb-0.5">Sombra</span><span class="text-brand-dark-text">{shadow}</span></div>
+  </div>
+
+  <div>
+    <span class="text-brand-dark-muted text-xs block mb-1">Marcas de referencia</span>
+    <div class="flex flex-wrap gap-2">
+      {brands.map((b) => (
+        <span class="font-mono text-xs px-2 py-1 rounded bg-brand-dark-border/30 text-brand-dark-muted">{b}</span>
+      ))}
+    </div>
+  </div>
+</div>

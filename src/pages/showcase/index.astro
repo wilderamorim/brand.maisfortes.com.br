@@ -1,0 +1,82 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="0.0"
+  pageTitle="Editorial"
+  pageSubtitle="Showcase editorial da marca +Fortes."
+  sectionsCount={3}
+>
+
+  <!-- 01 Hero -->
+  <Section number="01" title="Brand Summary" subtitle="Visao condensada">
+    <div class="surface-elevated p-8 md:p-12 rounded-[20px] space-y-8">
+      <!-- Logo + Name -->
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-xl bg-brand-forest flex items-center justify-center shadow-glow-md">
+          <span class="font-display font-bold text-4xl text-white">+</span>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-3xl text-white">+Fortes</h2>
+          <p class="font-mono text-xs text-brand-dark-muted">maisfortes.com.br</p>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <p class="font-display font-bold text-2xl md:text-3xl text-gradient-forest">
+        Juntos, somos +Fortes.
+      </p>
+
+      <!-- Purpose -->
+      <p class="text-lg text-brand-dark-text/80 leading-relaxed max-w-2xl">
+        Dar estrutura ao apoio que ja existe ao redor de quem precisa mudar — transformando boa vontade em acompanhamento real.
+      </p>
+
+      <!-- Colors -->
+      <div class="flex gap-3">
+        {['#2D6A4F', '#40916C', '#1B4332', '#F4845F', '#FFB703', '#90E0EF'].map((color) => (
+          <div class="w-12 h-12 rounded-lg" style={`background-color: ${color};`}></div>
+        ))}
+      </div>
+
+      <!-- Typography -->
+      <div class="space-y-2 pt-4 border-t border-brand-dark-border/30">
+        <p class="font-display font-bold text-2xl text-white">Outfit — Display</p>
+        <p class="font-body text-lg text-brand-dark-muted">Plus Jakarta Sans — Body</p>
+        <p class="font-mono text-sm text-brand-dark-muted/60">JetBrains Mono — Data</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 02 Values -->
+  <Section number="02" title="Valores" subtitle="O que nos guia">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      {[
+        { name: 'Presenca', emoji: '💚' },
+        { name: 'Honestidade', emoji: '👁️' },
+        { name: 'Constancia', emoji: '🔥' },
+        { name: 'Confianca', emoji: '🛡️' },
+        { name: 'Leveza', emoji: '🪶' },
+      ].map((v) => (
+        <div class="surface-card p-4 text-center">
+          <span class="text-2xl block mb-2">{v.emoji}</span>
+          <span class="font-display font-bold text-sm text-white">{v.name}</span>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- 03 Manifesto -->
+  <Section number="03" title="Manifesto">
+    <div class="surface-elevated p-8 md:p-12 rounded-[20px]">
+      <blockquote class="font-display text-2xl md:text-3xl text-white leading-relaxed space-y-4">
+        <p>"Ninguem muda sozinho.</p>
+        <p>+Fortes existe porque acreditamos que as pessoas ao redor de quem esta lutando por uma mudanca precisam de um papel claro: estar junto sem invadir, apoiar sem sufocar, celebrar sem exagerar.</p>
+        <p class="text-gradient-warm">Porque juntos, somos +Fortes."</p>
+      </blockquote>
+    </div>
+  </Section>
+
+</BrandbookLayout>

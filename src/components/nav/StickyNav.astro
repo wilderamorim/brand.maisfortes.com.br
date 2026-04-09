@@ -1,0 +1,131 @@
+---
+import NavGroup from './NavGroup.astro';
+import { navigation } from '@/lib/navigation';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<!-- Desktop sidebar -->
+<aside class="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 bg-brand-night border-r border-brand-dark-border/50 overflow-y-auto">
+  <!-- Logo -->
+  <a href="/" class="flex items-center gap-3 px-4 py-5 border-b border-brand-dark-border/50">
+    <div class="w-9 h-9 rounded-lg bg-brand-forest flex items-center justify-center font-display font-bold text-lg text-white shadow-glow">
+      +
+    </div>
+    <div>
+      <div class="font-display font-bold text-sm text-brand-dark-text leading-none">+FORTES</div>
+      <div class="font-mono text-[10px] text-brand-dark-muted mt-0.5">BRAND SYSTEM v1.0</div>
+    </div>
+  </a>
+
+  <!-- Navigation -->
+  <div class="flex-1 py-4 overflow-y-auto">
+    {navigation.map((nav) => (
+      <NavGroup
+        group={nav.group}
+        groupSlug={nav.slug}
+        pages={nav.pages}
+        currentPath={currentPath}
+      />
+    ))}
+  </div>
+
+  <!-- Footer -->
+  <div class="px-4 py-3 border-t border-brand-dark-border/50">
+    <div class="font-mono text-[10px] text-brand-dark-muted leading-relaxed">
+      Brand Identity System<br />
+      v1.0 // 2026 // Warm Light Edition
+    </div>
+  </div>
+</aside>
+
+<!-- Mobile header -->
+<header transition:persist class="lg:hidden fixed top-0 left-0 right-0 z-50 bg-brand-night/95 backdrop-blur-sm border-b border-brand-dark-border/50" style="position: fixed; top: 0;">
+  <div class="flex items-center justify-between px-4 py-3">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-brand-forest flex items-center justify-center font-display font-bold text-base text-white">
+        +
+      </div>
+      <span class="font-display font-bold text-sm text-brand-dark-text">+FORTES</span>
+    </a>
+    <button
+      id="mobile-menu-btn"
+      class="p-2 text-brand-dark-muted hover:text-brand-dark-text"
+      aria-label="Menu"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div id="mobile-drawer" class="lg:hidden fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black/60" id="mobile-overlay"></div>
+  <aside class="absolute right-0 top-0 bottom-0 w-72 bg-brand-night border-l border-brand-dark-border/50 overflow-y-auto">
+    <div class="flex items-center justify-between px-4 py-3 border-b border-brand-dark-border/50">
+      <span class="font-display font-bold text-sm text-brand-dark-text">Menu</span>
+      <button id="mobile-close-btn" class="p-2 text-brand-dark-muted hover:text-brand-dark-text" aria-label="Fechar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="py-4">
+      {navigation.map((nav) => (
+        <NavGroup
+          group={nav.group}
+          groupSlug={nav.slug}
+          pages={nav.pages}
+          currentPath={currentPath}
+        />
+      ))}
+    </div>
+  </aside>
+</div>
+
+<script is:inline>
+  function initMobileNav() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('mobile-overlay');
+    const closeBtn = document.getElementById('mobile-close-btn');
+
+    if (!btn || !drawer) return;
+
+    function openDrawer() { drawer.classList.remove('hidden'); }
+    function closeDrawer() { drawer.classList.add('hidden'); }
+
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    newBtn.addEventListener('click', openDrawer);
+
+    if (overlay) {
+      const newOverlay = overlay.cloneNode(true);
+      overlay.parentNode.replaceChild(newOverlay, overlay);
+      newOverlay.addEventListener('click', closeDrawer);
+    }
+
+    if (closeBtn) {
+      const newClose = closeBtn.cloneNode(true);
+      closeBtn.parentNode.replaceChild(newClose, closeBtn);
+      newClose.addEventListener('click', closeDrawer);
+    }
+
+    drawer.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeDrawer);
+    });
+  }
+
+  initMobileNav();
+  document.addEventListener('astro:after-swap', initMobileNav);
+  document.addEventListener('astro:page-load', initMobileNav);
+</script>

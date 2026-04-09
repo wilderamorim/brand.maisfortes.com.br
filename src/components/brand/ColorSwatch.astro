@@ -1,0 +1,28 @@
+---
+interface Props {
+  name: string;
+  hex: string;
+  rgb?: string;
+  usage?: string;
+  token?: string;
+  large?: boolean;
+}
+
+const { name, hex, rgb, usage, token, large = false } = Astro.props;
+---
+
+<div class:list={['group surface-card overflow-hidden', large ? 'col-span-2' : '']}>
+  <div
+    class:list={['w-full', large ? 'h-32' : 'h-20']}
+    style={`background-color: ${hex};`}
+  />
+  <div class="p-3 space-y-1">
+    <div class="flex items-center justify-between">
+      <span class="font-body text-sm font-semibold text-white">{name}</span>
+      <span class="font-mono text-xs text-brand-dark-muted">{hex}</span>
+    </div>
+    {rgb && <div class="font-mono text-xs text-brand-dark-muted">rgb({rgb})</div>}
+    {usage && <div class="text-xs text-brand-dark-muted">{usage}</div>}
+    {token && <div class="font-mono text-[10px] text-brand-dark-muted/60">{token}</div>}
+  </div>
+</div>

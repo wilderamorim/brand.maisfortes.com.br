@@ -1,0 +1,124 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+import TokenTable from '@/components/brand/TokenTable.astro';
+---
+
+<BrandbookLayout
+  pageNumber="2.0"
+  pageTitle="Foundations"
+  pageSubtitle="Design tokens: spacing, radius, shadows, transitions e variáveis CSS."
+  sectionsCount={5}
+>
+
+  <!-- 01 Spacing -->
+  <Section number="01" title="Spacing Scale" subtitle="Sistema de espacamento">
+    <TokenTable title="Spacing Tokens" tokens={[
+      { token: '--space-xs', value: '4px', preview: '' },
+      { token: '--space-sm', value: '8px', preview: '' },
+      { token: '--space-md', value: '16px', preview: '' },
+      { token: '--space-lg', value: '24px', preview: '' },
+      { token: '--space-xl', value: '32px', preview: '' },
+      { token: '--space-2xl', value: '48px', preview: '' },
+      { token: '--space-3xl', value: '64px', preview: '' },
+    ]} />
+    <div class="flex items-end gap-2 mt-6">
+      {[4, 8, 16, 24, 32, 48, 64].map((size) => (
+        <div class="flex flex-col items-center gap-1">
+          <div class="bg-brand-forest/30 border border-brand-forest/50" style={`width: ${size}px; height: ${size}px;`}></div>
+          <span class="font-mono text-[10px] text-brand-dark-muted">{size}</span>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- 02 Border Radius -->
+  <Section number="02" title="Border Radius" subtitle="Cantos arredondados">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      {[
+        { name: 'Button', value: '12px', token: '--radius-button' },
+        { name: 'Card', value: '16px', token: '--radius-card' },
+        { name: 'Input', value: '10px', token: '--radius-input' },
+        { name: 'Modal', value: '20px', token: '--radius-modal' },
+        { name: 'Pill', value: '9999px', token: '--radius-pill' },
+      ].map((r) => (
+        <div class="surface-card p-4 text-center">
+          <div class="w-16 h-16 mx-auto bg-brand-forest/20 border border-brand-forest/40" style={`border-radius: ${r.value};`}></div>
+          <p class="font-body text-sm text-white mt-2">{r.name}</p>
+          <p class="font-mono text-[10px] text-brand-dark-muted">{r.value}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- 03 Shadows -->
+  <Section number="03" title="Shadows" subtitle="Sombras e glow effects">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      {[
+        { name: 'Shadow SM', value: '0 1px 2px rgba(0,0,0,0.05)', css: 'shadow-sm' },
+        { name: 'Shadow MD', value: '0 4px 6px rgba(0,0,0,0.07)', css: 'shadow-md' },
+        { name: 'Shadow LG', value: '0 10px 15px rgba(0,0,0,0.1)', css: 'shadow-lg' },
+        { name: 'Glow', value: '0 0 20px forest/15%', css: 'shadow-glow' },
+      ].map((s) => (
+        <div class="surface-card p-6 text-center">
+          <div class={`w-20 h-20 mx-auto bg-brand-dark-surface rounded-lg ${s.css}`}></div>
+          <p class="font-body text-sm text-white mt-3">{s.name}</p>
+          <p class="font-mono text-[10px] text-brand-dark-muted mt-1">{s.value}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- 04 Transitions -->
+  <Section number="04" title="Transitions" subtitle="Duracoes e easing">
+    <TokenTable title="Transition Tokens" tokens={[
+      { token: '--transition-fast', value: '150ms ease' },
+      { token: '--transition-normal', value: '250ms ease' },
+      { token: '--transition-slow', value: '400ms ease-out' },
+    ]} />
+  </Section>
+
+  <!-- 05 CSS Variables -->
+  <Section number="05" title="CSS Variables" subtitle="Implementacao completa">
+    <div class="surface-card p-6 overflow-x-auto">
+      <pre class="font-mono text-xs text-brand-dark-text/80 leading-relaxed"><code>{`:root {
+  /* Primary */
+  --color-primary: #2D6A4F;
+  --color-primary-light: #40916C;
+  --color-primary-dark: #1B4332;
+
+  /* Secondary */
+  --color-coral: #F4845F;
+  --color-amber: #FFB703;
+  --color-sky: #90E0EF;
+
+  /* Neutral (Light Mode) */
+  --color-bg: #FFFFFF;
+  --color-surface: #F8F9FA;
+  --color-border: #E9ECEF;
+  --color-text-muted: #6C757D;
+  --color-text: #212529;
+
+  /* Semantic */
+  --color-success: #40916C;
+  --color-warning: #FFB703;
+  --color-danger: #E5383B;
+  --color-info: #90E0EF;
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0D1117;
+  --color-surface: #161B22;
+  --color-border: #30363D;
+  --color-text-muted: #8B949E;
+  --color-text: #E6EDF3;
+}`}</code></pre>
+    </div>
+  </Section>
+
+</BrandbookLayout>

@@ -1,0 +1,32 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+import { navigation } from '@/lib/navigation';
+
+const dsPages = navigation.find(g => g.slug === 'design-system')?.pages ?? [];
+---
+
+<BrandbookLayout
+  pageNumber="0.0"
+  pageTitle="Components"
+  pageSubtitle="Catalogo de componentes do design system +Fortes."
+  sectionsCount={1}
+>
+
+  <Section number="01" title="Catalogo" subtitle="Todos os componentes documentados">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      {dsPages.filter(p => p.slug !== '').map((page) => (
+        <a
+          href={`/design-system/${page.slug}/`}
+          class="group surface-card p-5 hover:border-brand-forest/40 transition-all duration-200"
+        >
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs text-brand-dark-muted/60">{page.number}</span>
+            <span class="font-display font-bold text-sm text-white group-hover:text-brand-forest transition-colors">{page.title}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+</BrandbookLayout>

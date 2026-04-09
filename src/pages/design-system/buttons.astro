@@ -1,0 +1,102 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="1.0"
+  pageTitle="Buttons"
+  pageSubtitle="Variantes, tamanhos, estados e combinacoes de botoes."
+  sectionsCount={4}
+>
+
+  <!-- 01 Variants -->
+  <Section number="01" title="Variantes" subtitle="Tipos de botao disponíveis">
+    <div class="space-y-6">
+      <div class="surface-card p-6">
+        <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-6">Production Roles</h4>
+        <div class="flex flex-wrap gap-4">
+          <!-- Primary -->
+          <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm hover:bg-brand-forest-light transition-colors shadow-glow">
+            Primary
+          </button>
+          <!-- Secondary -->
+          <button class="px-6 py-2.5 bg-transparent text-brand-forest border border-brand-forest rounded-[12px] font-body font-semibold text-sm hover:bg-brand-forest/10 transition-colors">
+            Secondary
+          </button>
+          <!-- Ghost -->
+          <button class="px-6 py-2.5 bg-transparent text-brand-dark-muted rounded-[12px] font-body font-semibold text-sm hover:bg-brand-dark-surface hover:text-white transition-colors">
+            Ghost
+          </button>
+          <!-- Danger -->
+          <button class="px-6 py-2.5 bg-[#E5383B] text-white rounded-[12px] font-body font-semibold text-sm hover:bg-[#C62828] transition-colors">
+            Danger
+          </button>
+          <!-- Celebration -->
+          <button class="px-6 py-2.5 bg-brand-amber text-brand-charcoal rounded-[12px] font-body font-semibold text-sm hover:bg-brand-amber-light transition-colors">
+            Celebration
+          </button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 02 Sizes -->
+  <Section number="02" title="Tamanhos" subtitle="Small, Medium, Large">
+    <div class="surface-card p-6">
+      <div class="flex flex-wrap items-center gap-4">
+        <button class="px-4 py-1.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-xs">
+          Small
+        </button>
+        <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm">
+          Medium
+        </button>
+        <button class="px-8 py-3.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-base">
+          Large
+        </button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 03 States -->
+  <Section number="03" title="Estados" subtitle="Default, Hover, Disabled, Loading">
+    <div class="surface-card p-6">
+      <div class="flex flex-wrap items-center gap-4">
+        <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm">
+          Default
+        </button>
+        <button class="px-6 py-2.5 bg-brand-forest-light text-white rounded-[12px] font-body font-semibold text-sm shadow-sm">
+          Hover
+        </button>
+        <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm opacity-50 cursor-not-allowed">
+          Disabled
+        </button>
+        <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm flex items-center gap-2">
+          <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="30 70" />
+          </svg>
+          Loading...
+        </button>
+      </div>
+    </div>
+  </Section>
+
+  <!-- 04 CTA Combinations -->
+  <Section number="04" title="Combinacoes" subtitle="CTAs em contexto">
+    <div class="surface-card p-8 space-y-6">
+      <div class="max-w-md">
+        <h3 class="font-display font-bold text-xl text-white mb-2">Comece sua jornada</h3>
+        <p class="text-sm text-brand-dark-muted mb-4">Crie sua conta gratuita e defina sua primeira meta.</p>
+        <div class="flex gap-3">
+          <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm hover:bg-brand-forest-light transition-colors shadow-glow">
+            Criar conta
+          </button>
+          <button class="px-6 py-2.5 bg-transparent text-brand-dark-muted rounded-[12px] font-body font-semibold text-sm hover:text-white transition-colors">
+            Saiba mais
+          </button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+</BrandbookLayout>

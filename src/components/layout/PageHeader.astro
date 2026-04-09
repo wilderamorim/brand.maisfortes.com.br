@@ -1,0 +1,29 @@
+---
+interface Props {
+  number?: string;
+  title: string;
+  subtitle?: string;
+  sectionsCount?: number;
+}
+
+const { number, title, subtitle, sectionsCount } = Astro.props;
+---
+
+<header class="pt-8 pb-12 border-b border-brand-dark-border/50 mb-12">
+  {number && (
+    <span class="section-number mb-2 block">{number}</span>
+  )}
+  <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+    {title}
+  </h1>
+  {subtitle && (
+    <p class="mt-3 text-lg text-brand-dark-muted max-w-2xl">{subtitle}</p>
+  )}
+  <div class="page-meta mt-4 flex items-center gap-3">
+    {sectionsCount && <span>{sectionsCount} sections</span>}
+    <span class="text-brand-dark-border">//</span>
+    <span>2026</span>
+    <span class="text-brand-dark-border">//</span>
+    <span>Warm Light Edition</span>
+  </div>
+</header>

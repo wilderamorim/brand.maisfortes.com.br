@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-night text-brand-dark-text font-body antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-night;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-dark-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-dark-muted;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-brand-forest/30 text-white;
+  }
+}
+
+@layer components {
+  /* Section number marker */
+  .section-number {
+    @apply font-mono text-sm text-brand-forest tracking-widest uppercase;
+  }
+
+  /* Page meta line */
+  .page-meta {
+    @apply font-mono text-xs text-brand-dark-muted tracking-wider uppercase;
+  }
+
+  /* Glass card effect */
+  .glass {
+    @apply bg-brand-dark-surface/60 backdrop-blur-xl border border-brand-dark-border/50;
+  }
+
+  /* Warm glow ring on hover */
+  .glow-ring {
+    @apply transition-shadow duration-300;
+  }
+  .glow-ring:hover {
+    @apply shadow-glow;
+  }
+
+  /* Gradient text */
+  .text-gradient-forest {
+    @apply bg-gradient-to-r from-brand-forest to-brand-forest-light bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-brand-coral to-brand-amber bg-clip-text text-transparent;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-brand-dark-border/50;
+  }
+
+  /* Surface levels */
+  .surface-card {
+    @apply bg-brand-dark-surface/40 border border-brand-dark-border/30 rounded-lg;
+  }
+
+  .surface-elevated {
+    @apply bg-brand-dark-surface border border-brand-dark-border/50 rounded-lg;
+  }
+}
+
+@layer utilities {
+  .border-subtle {
+    @apply border-brand-dark-border/50;
+  }
+}
