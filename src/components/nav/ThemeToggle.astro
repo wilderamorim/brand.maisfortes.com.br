@@ -2,12 +2,10 @@
 ---
 
 <button
-  id="theme-toggle"
-  class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 border"
+  class="theme-toggle flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 border"
   aria-label="Alternar tema"
 >
-  <!-- Sun icon (shown in dark mode → click to go light) -->
-  <svg id="icon-sun" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <svg class="theme-icon-sun w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="5" />
     <line x1="12" y1="1" x2="12" y2="3" />
     <line x1="12" y1="21" x2="12" y2="23" />
@@ -18,70 +16,64 @@
     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
   </svg>
-  <!-- Moon icon (shown in light mode → click to go dark) -->
-  <svg id="icon-moon" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <svg class="theme-icon-moon w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
   </svg>
-  <span id="theme-label"></span>
+  <span class="theme-label"></span>
 </button>
 
 <script is:inline>
-  function initThemeToggle() {
-    const toggle = document.getElementById('theme-toggle');
-    const iconSun = document.getElementById('icon-sun');
-    const iconMoon = document.getElementById('icon-moon');
-    const label = document.getElementById('theme-label');
-    if (!toggle || !iconSun || !iconMoon || !label) return;
+  function initAllThemeToggles() {
+    var theme = localStorage.getItem('theme') || 'dark';
 
-    function getTheme() {
-      return localStorage.getItem('theme') || 'dark';
-    }
+    // Apply theme to HTML
+    document.documentElement.classList.remove('dark', 'light');
+    document.documentElement.classList.add(theme);
 
-    function applyTheme(theme) {
-      const html = document.documentElement;
-      html.classList.remove('dark', 'light');
-      html.classList.add(theme);
-      localStorage.setItem('theme', theme);
-      updateUI(theme);
-    }
+    // Update ALL toggle instances
+    var toggles = document.querySelectorAll('.theme-toggle');
+    toggles.forEach(function(toggle) {
+      var sun = toggle.querySelector('.theme-icon-sun');
+      var moon = toggle.querySelector('.theme-icon-moon');
+      var label = toggle.querySelector('.theme-label');
 
-    function updateUI(theme) {
+      if (!sun || !moon || !label) return;
+
       if (theme === 'dark') {
-        iconSun.classList.remove('hidden');
-        iconMoon.classList.add('hidden');
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
         label.textContent = 'Light';
-        toggle.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 border text-brand-dark-muted border-brand-dark-border/50 hover:text-brand-dark-text hover:border-brand-dark-border';
+        toggle.className = 'theme-toggle flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 border t-muted';
+        toggle.style.borderColor = 'var(--theme-border)';
       } else {
-        iconSun.classList.add('hidden');
-        iconMoon.classList.remove('hidden');
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
         label.textContent = 'Dark';
-        toggle.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 border text-brand-stone border-brand-mist hover:text-brand-charcoal hover:border-brand-stone';
+        toggle.className = 'theme-toggle flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 border t-muted';
+        toggle.style.borderColor = 'var(--theme-border)';
       }
-    }
 
-    // Apply saved theme
-    applyTheme(getTheme());
+      // Remove old listener via clone
+      var newToggle = toggle.cloneNode(true);
+      toggle.parentNode.replaceChild(newToggle, toggle);
 
-    // Clone to remove old listeners
-    var newToggle = toggle.cloneNode(true);
-    toggle.parentNode.replaceChild(newToggle, toggle);
-
-    newToggle.addEventListener('click', function() {
-      var current = getTheme();
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-      // Re-grab icons after clone
-      initThemeToggle();
+      newToggle.addEventListener('click', function() {
+        var current = localStorage.getItem('theme') || 'dark';
+        var next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
+        initAllThemeToggles();
+      });
     });
   }
 
-  // Prevent flash: apply theme before paint
+  // Prevent flash
   (function() {
-    var theme = localStorage.getItem('theme') || 'dark';
+    var t = localStorage.getItem('theme') || 'dark';
     document.documentElement.classList.remove('dark', 'light');
-    document.documentElement.classList.add(theme);
+    document.documentElement.classList.add(t);
   })();
 
-  initThemeToggle();
-  document.addEventListener('astro:after-swap', initThemeToggle);
-  document.addEventListener('astro:page-load', initThemeToggle);
+  initAllThemeToggles();
+  document.addEventListener('astro:after-swap', initAllThemeToggles);
+  document.addEventListener('astro:page-load', initAllThemeToggles);
 </script>

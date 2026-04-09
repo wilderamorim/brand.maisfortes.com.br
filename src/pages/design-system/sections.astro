@@ -36,15 +36,17 @@ import Section from '@/components/layout/Section.astro';
   <Section number="02" title="Features Grid" subtitle="Bloco de funcionalidades">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {[
-        { icon: '📊', title: 'Check-in diário', desc: 'Registre como foi seu dia em segundos. Score de 1 a 5 + nota opcional.' },
-        { icon: '🔥', title: 'Streak', desc: 'Acompanhe sua sequência de dias. Cada dia conta.' },
-        { icon: '👥', title: 'Rede de apoio', desc: 'Convide quem te apoia. Eles acompanham sem invadir.' },
-        { icon: '🔔', title: 'Alertas', desc: 'Sua rede recebe alerta se você parar. Ninguém fica sozinho.' },
-        { icon: '🔒', title: 'Privacidade total', desc: 'Você controla tudo. Nada é compartilhado sem sua permissão.' },
-        { icon: '💬', title: 'Mensagens', desc: 'Receba incentivo de quem te apoia nos momentos que mais precisa.' },
+        { title: 'Check-in diário', desc: 'Registre como foi seu dia em segundos. Score de 1 a 5 + nota opcional.', svg: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+        { title: 'Streak', desc: 'Acompanhe sua sequência de dias. Cada dia conta.', svg: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z' },
+        { title: 'Rede de apoio', desc: 'Convide quem te apoia. Eles acompanham sem invadir.', svg: 'M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75' },
+        { title: 'Alertas', desc: 'Sua rede recebe alerta se você parar. Ninguém fica sozinho.', svg: 'M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0' },
+        { title: 'Privacidade total', desc: 'Você controla tudo. Nada é compartilhado sem sua permissão.', svg: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+        { title: 'Mensagens', desc: 'Receba incentivo de quem te apoia nos momentos que mais precisa.', svg: 'M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z' },
       ].map((f) => (
-        <div class="surface-card p-5 space-y-2">
-          <span class="text-2xl">{f.icon}</span>
+        <div class="surface-card p-5 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-forest/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d={f.svg} /></svg>
+          </div>
           <h4 class="font-display font-bold t-heading">{f.title}</h4>
           <p class="text-sm t-muted">{f.desc}</p>
         </div>

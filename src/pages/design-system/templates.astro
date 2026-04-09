@@ -88,14 +88,16 @@ import Section from '@/components/layout/Section.astro';
   <Section number="03" title="Onboarding Flow" subtitle="Sequência de primeiro uso">
     <div class="flex flex-col md:flex-row gap-4">
       {[
-        { step: '1', title: 'Boas-vindas', desc: 'Bem-vindo ao +Fortes', icon: '👋' },
-        { step: '2', title: 'Criar meta', desc: 'Qual é sua jornada?', icon: '🎯' },
-        { step: '3', title: 'Convidar', desc: 'Quem caminha com você?', icon: '👥' },
-        { step: '4', title: 'Primeiro check-in', desc: 'Como está se sentindo?', icon: '✨' },
+        { step: '1', title: 'Boas-vindas', desc: 'Bem-vindo ao +Fortes', svg: 'M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z' },
+        { step: '2', title: 'Criar meta', desc: 'Qual é sua jornada?', svg: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+        { step: '3', title: 'Convidar', desc: 'Quem caminha com você?', svg: 'M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75' },
+        { step: '4', title: 'Primeiro check-in', desc: 'Como está se sentindo?', svg: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
       ].map((s, i) => (
         <div class="flex-1 surface-card p-5 text-center relative">
-          {i < 3 && <div class="hidden md:block absolute top-1/2 -right-2 w-4 text-brand-dark-border z-10">→</div>}
-          <span class="text-2xl block mb-2">{s.icon}</span>
+          {i < 3 && <div class="hidden md:block absolute top-1/2 -right-2 w-4 t-muted z-10">→</div>}
+          <div class="w-10 h-10 mx-auto mb-2 rounded-lg bg-brand-forest/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d={s.svg} /></svg>
+          </div>
           <span class="font-mono text-[10px] text-brand-forest">Passo {s.step}</span>
           <h4 class="font-display font-bold t-heading text-sm mt-1">{s.title}</h4>
           <p class="text-[10px] t-muted mt-1">{s.desc}</p>
