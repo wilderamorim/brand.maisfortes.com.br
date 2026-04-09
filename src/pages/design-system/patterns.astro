@@ -1,0 +1,54 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="8.0"
+  pageTitle="Patterns"
+  pageSubtitle="Backgrounds, texturas e padroes visuais reutilizaveis."
+  sectionsCount={3}
+>
+
+  <Section number="01" title="Dot Grid" subtitle="Padrao de pontos para backgrounds">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="h-48 rounded-lg bg-brand-night relative overflow-hidden border border-brand-dark-border/30">
+        <div class="absolute inset-0 opacity-[0.06]" style="background-image: radial-gradient(circle, #E6EDF3 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="absolute bottom-3 left-3 font-mono text-[10px] text-brand-dark-muted">dot-grid — 24px — opacity 6%</div>
+      </div>
+      <div class="h-48 rounded-lg bg-brand-night relative overflow-hidden border border-brand-dark-border/30">
+        <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #E6EDF3 1px, transparent 1px); background-size: 16px 16px;"></div>
+        <div class="absolute bottom-3 left-3 font-mono text-[10px] text-brand-dark-muted">dot-grid-dense — 16px — opacity 4%</div>
+      </div>
+    </div>
+  </Section>
+
+  <Section number="02" title="Gradients" subtitle="Gradientes da marca">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="h-32 rounded-lg" style="background: linear-gradient(135deg, #2D6A4F, #40916C);"></div>
+      <div class="h-32 rounded-lg" style="background: linear-gradient(135deg, #F4845F, #FFB703);"></div>
+      <div class="h-32 rounded-lg" style="background: linear-gradient(135deg, #2D6A4F, #40916C, #F4845F);"></div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-2">
+      <span class="font-mono text-[10px] text-brand-dark-muted text-center">Forest gradient</span>
+      <span class="font-mono text-[10px] text-brand-dark-muted text-center">Warm gradient</span>
+      <span class="font-mono text-[10px] text-brand-dark-muted text-center">Full brand gradient</span>
+    </div>
+  </Section>
+
+  <Section number="03" title="Glow Effects" subtitle="Efeitos de brilho e luz">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[
+        { name: 'Forest Glow', shadow: '0 0 40px rgba(45,106,79,0.3)', color: '#2D6A4F' },
+        { name: 'Coral Glow', shadow: '0 0 40px rgba(244,132,95,0.3)', color: '#F4845F' },
+        { name: 'Amber Glow', shadow: '0 0 40px rgba(255,183,3,0.3)', color: '#FFB703' },
+      ].map((glow) => (
+        <div class="flex flex-col items-center gap-3">
+          <div class="w-24 h-24 rounded-2xl" style={`background: ${glow.color}; box-shadow: ${glow.shadow};`}></div>
+          <span class="font-mono text-xs text-brand-dark-muted">{glow.name}</span>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+</BrandbookLayout>

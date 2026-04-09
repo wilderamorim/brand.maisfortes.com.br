@@ -1,0 +1,76 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="4.0"
+  pageTitle="Feedback"
+  pageSubtitle="Alerts, toasts, modals e empty states."
+  sectionsCount={4}
+>
+
+  <Section number="01" title="Alerts" subtitle="Mensagens contextuais">
+    <div class="space-y-3 max-w-lg">
+      {[
+        { type: 'Success', msg: 'Check-in registrado! Dia 8 da sua jornada.', bg: 'bg-brand-forest/10 border-brand-forest/30', text: 'text-brand-forest', icon: '+' },
+        { type: 'Warning', msg: 'Voce nao fez check-in ontem. Tudo bem — hoje e um novo dia.', bg: 'bg-brand-amber/10 border-brand-amber/30', text: 'text-brand-amber', icon: '!' },
+        { type: 'Error', msg: 'Nao foi possivel salvar. Tenta de novo?', bg: 'bg-[#E5383B]/10 border-[#E5383B]/30', text: 'text-[#E5383B]', icon: '✕' },
+        { type: 'Info', msg: 'Maria aceitou seu convite e agora acompanha sua jornada.', bg: 'bg-brand-sky/10 border-brand-sky/30', text: 'text-brand-sky', icon: 'i' },
+      ].map((alert) => (
+        <div class={`flex items-start gap-3 px-4 py-3 rounded-[12px] border ${alert.bg}`}>
+          <span class={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${alert.text} bg-current/10`}>{alert.icon}</span>
+          <div>
+            <span class={`font-mono text-[10px] uppercase tracking-widest ${alert.text}`}>{alert.type}</span>
+            <p class="text-sm text-white mt-0.5">{alert.msg}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section number="02" title="Toasts" subtitle="Notificacoes temporarias">
+    <div class="max-w-sm space-y-3">
+      {[
+        { msg: 'Check-in salvo!', icon: '✓' },
+        { msg: 'Convite enviado para Maria', icon: '→' },
+        { msg: 'Streak: 7 dias! 🔥', icon: '🎉' },
+      ].map((toast) => (
+        <div class="flex items-center gap-3 px-4 py-3 rounded-[12px] bg-brand-dark-surface border border-brand-dark-border/50 shadow-lg">
+          <span class="text-brand-forest text-sm">{toast.icon}</span>
+          <span class="text-sm text-white flex-1">{toast.msg}</span>
+          <button class="text-brand-dark-muted hover:text-white text-xs">✕</button>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section number="03" title="Modal" subtitle="Dialogo de confirmacao">
+    <div class="max-w-sm mx-auto">
+      <div class="surface-elevated p-6 rounded-[20px] space-y-4 shadow-lg">
+        <h3 class="font-display font-bold text-lg text-white">Remover apoiador?</h3>
+        <p class="text-sm text-brand-dark-muted">Maria nao podera mais acompanhar sua jornada. Voce pode convida-la novamente depois.</p>
+        <div class="flex gap-3 pt-2">
+          <button class="flex-1 py-2 bg-transparent text-brand-dark-muted rounded-[12px] font-body text-sm hover:bg-brand-dark-surface transition-colors border border-brand-dark-border/30">Cancelar</button>
+          <button class="flex-1 py-2 bg-[#E5383B] text-white rounded-[12px] font-body font-semibold text-sm hover:bg-[#C62828] transition-colors">Remover</button>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section number="04" title="Empty States" subtitle="Quando nao ha dados">
+    <div class="max-w-sm mx-auto">
+      <div class="surface-card p-8 text-center rounded-[20px]">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-forest/10 flex items-center justify-center">
+          <span class="text-3xl">🌱</span>
+        </div>
+        <h4 class="font-display font-bold text-white mb-2">Nenhum check-in ainda</h4>
+        <p class="text-sm text-brand-dark-muted mb-4">Faca seu primeiro check-in e comece a construir seu streak.</p>
+        <button class="px-6 py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm shadow-glow">
+          Fazer check-in
+        </button>
+      </div>
+    </div>
+  </Section>
+
+</BrandbookLayout>

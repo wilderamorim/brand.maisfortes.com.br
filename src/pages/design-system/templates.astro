@@ -1,0 +1,107 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="9.0"
+  pageTitle="Templates"
+  pageSubtitle="Page shell, dashboard layout e fluxos de onboarding."
+  sectionsCount={3}
+>
+
+  <Section number="01" title="Page Shell" subtitle="Estrutura padrao de pagina">
+    <div class="surface-card p-4 rounded-[16px] overflow-hidden">
+      <div class="border border-brand-dark-border/30 rounded-lg overflow-hidden">
+        <!-- Nav mock -->
+        <div class="h-10 bg-brand-dark-surface border-b border-brand-dark-border/30 flex items-center px-4 gap-3">
+          <div class="w-6 h-6 rounded bg-brand-forest/30"></div>
+          <div class="h-2 w-16 rounded bg-brand-dark-border/30"></div>
+          <div class="ml-auto flex gap-2">
+            <div class="h-2 w-8 rounded bg-brand-dark-border/20"></div>
+            <div class="h-2 w-8 rounded bg-brand-dark-border/20"></div>
+          </div>
+        </div>
+        <!-- Content area -->
+        <div class="p-6 space-y-4 min-h-[200px]">
+          <div class="h-3 w-24 rounded bg-brand-forest/20"></div>
+          <div class="h-6 w-64 rounded bg-brand-dark-border/30"></div>
+          <div class="h-2 w-48 rounded bg-brand-dark-border/20"></div>
+          <div class="border-t border-brand-dark-border/20 pt-4 mt-4 space-y-3">
+            <div class="h-3 w-full rounded bg-brand-dark-border/15"></div>
+            <div class="h-3 w-3/4 rounded bg-brand-dark-border/15"></div>
+          </div>
+        </div>
+        <!-- Footer mock -->
+        <div class="h-8 bg-brand-dark-surface/50 border-t border-brand-dark-border/20 flex items-center justify-center">
+          <div class="h-1.5 w-32 rounded bg-brand-dark-border/20"></div>
+        </div>
+      </div>
+      <div class="mt-3 font-mono text-[10px] text-brand-dark-muted text-center">
+        Nav → Page Header → Content Sections → Footer
+      </div>
+    </div>
+  </Section>
+
+  <Section number="02" title="Dashboard Layout" subtitle="Layout principal do app">
+    <div class="surface-card p-4 rounded-[16px]">
+      <div class="border border-brand-dark-border/30 rounded-lg overflow-hidden">
+        <!-- Top bar -->
+        <div class="h-12 bg-brand-dark-surface border-b border-brand-dark-border/30 flex items-center justify-between px-4">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-lg bg-brand-forest/30"></div>
+            <div class="h-2 w-16 rounded bg-brand-dark-border/30"></div>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-brand-dark-border/30"></div>
+        </div>
+        <!-- Body -->
+        <div class="p-4 space-y-3 min-h-[240px]">
+          <!-- Streak -->
+          <div class="flex items-center gap-3 p-3 rounded-lg bg-brand-forest/5 border border-brand-forest/20">
+            <div class="font-mono font-bold text-2xl text-brand-forest">8</div>
+            <div class="h-2 w-20 rounded bg-brand-dark-border/20"></div>
+          </div>
+          <!-- Check-in card -->
+          <div class="p-4 rounded-[16px] bg-brand-dark-surface border border-brand-dark-border/30 space-y-3">
+            <div class="h-3 w-32 rounded bg-brand-dark-border/30"></div>
+            <div class="flex gap-2">
+              {[1,2,3,4,5].map(() => (
+                <div class="w-10 h-12 rounded-lg bg-brand-dark-border/20"></div>
+              ))}
+            </div>
+            <div class="h-8 rounded-lg bg-brand-forest/20"></div>
+          </div>
+          <!-- Supporters -->
+          <div class="flex gap-2">
+            {[1,2,3].map(() => (
+              <div class="w-8 h-8 rounded-full bg-brand-dark-border/20"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 font-mono text-[10px] text-brand-dark-muted text-center">
+        Top Bar → Streak → Check-in Card → Supporters
+      </div>
+    </div>
+  </Section>
+
+  <Section number="03" title="Onboarding Flow" subtitle="Sequencia de primeiro uso">
+    <div class="flex flex-col md:flex-row gap-4">
+      {[
+        { step: '1', title: 'Boas-vindas', desc: 'Bem-vindo ao +Fortes', icon: '👋' },
+        { step: '2', title: 'Criar meta', desc: 'Qual e sua jornada?', icon: '🎯' },
+        { step: '3', title: 'Convidar', desc: 'Quem caminha com voce?', icon: '👥' },
+        { step: '4', title: 'Primeiro check-in', desc: 'Como esta se sentindo?', icon: '✨' },
+      ].map((s, i) => (
+        <div class="flex-1 surface-card p-5 text-center relative">
+          {i < 3 && <div class="hidden md:block absolute top-1/2 -right-2 w-4 text-brand-dark-border z-10">→</div>}
+          <span class="text-2xl block mb-2">{s.icon}</span>
+          <span class="font-mono text-[10px] text-brand-forest">Passo {s.step}</span>
+          <h4 class="font-display font-bold text-white text-sm mt-1">{s.title}</h4>
+          <p class="text-[10px] text-brand-dark-muted mt-1">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+</BrandbookLayout>

@@ -1,0 +1,86 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="5.0"
+  pageTitle="States"
+  pageSubtitle="Spinners, progress bars e skeletons."
+  sectionsCount={3}
+>
+
+  <Section number="01" title="Spinners" subtitle="Indicadores de carregamento">
+    <div class="surface-card p-6">
+      <div class="flex items-center gap-8">
+        {[
+          { size: 'w-5 h-5', label: 'Small' },
+          { size: 'w-8 h-8', label: 'Medium' },
+          { size: 'w-12 h-12', label: 'Large' },
+        ].map((s) => (
+          <div class="text-center">
+            <div class={`${s.size} mx-auto mb-2`}>
+              <svg class="animate-spin text-brand-forest" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="30 70" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="font-mono text-[10px] text-brand-dark-muted">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <Section number="02" title="Progress Bars" subtitle="Indicadores de progresso">
+    <div class="space-y-4 max-w-md">
+      {[
+        { pct: 25, label: 'Semana 1/4' },
+        { pct: 50, label: 'Metade da meta' },
+        { pct: 75, label: '3/4 do caminho' },
+        { pct: 100, label: 'Meta completa!' },
+      ].map((bar) => (
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs">
+            <span class="text-brand-dark-muted">{bar.label}</span>
+            <span class="font-mono text-brand-forest">{bar.pct}%</span>
+          </div>
+          <div class="h-2 rounded-full bg-brand-dark-border/30 overflow-hidden">
+            <div
+              class="h-full rounded-full bg-brand-forest transition-all duration-500"
+              style={`width: ${bar.pct}%;`}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section number="03" title="Skeletons" subtitle="Placeholders de carregamento">
+    <div class="max-w-md space-y-4">
+      <!-- Skeleton card -->
+      <div class="surface-card p-5 rounded-[16px] space-y-3 animate-pulse">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brand-dark-border/30"></div>
+          <div class="space-y-2 flex-1">
+            <div class="h-3 w-24 rounded bg-brand-dark-border/30"></div>
+            <div class="h-2 w-16 rounded bg-brand-dark-border/20"></div>
+          </div>
+        </div>
+        <div class="h-3 w-full rounded bg-brand-dark-border/20"></div>
+        <div class="h-3 w-3/4 rounded bg-brand-dark-border/20"></div>
+      </div>
+      <!-- Skeleton checkin -->
+      <div class="surface-card p-5 rounded-[20px] space-y-4 animate-pulse">
+        <div class="h-3 w-20 rounded bg-brand-dark-border/30"></div>
+        <div class="h-5 w-40 rounded bg-brand-dark-border/30"></div>
+        <div class="flex justify-between">
+          {[1,2,3,4,5].map(() => (
+            <div class="w-12 h-14 rounded-xl bg-brand-dark-border/20"></div>
+          ))}
+        </div>
+        <div class="h-10 rounded-[12px] bg-brand-dark-border/20"></div>
+      </div>
+    </div>
+  </Section>
+
+</BrandbookLayout>

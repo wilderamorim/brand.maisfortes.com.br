@@ -1,0 +1,89 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="6.0"
+  pageTitle="Charts"
+  pageSubtitle="Visualizacoes de progresso, streak calendar e historico de scores."
+  sectionsCount={3}
+>
+
+  <Section number="01" title="Score History" subtitle="Historico semanal de check-ins">
+    <div class="surface-card p-6 max-w-lg">
+      <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-4">Ultima semana</h4>
+      <div class="flex items-end justify-between gap-2 h-40">
+        {[
+          { day: 'Seg', score: 4, color: 'bg-brand-forest' },
+          { day: 'Ter', score: 3, color: 'bg-brand-dark-border' },
+          { day: 'Qua', score: 5, color: 'bg-brand-forest' },
+          { day: 'Qui', score: 2, color: 'bg-brand-coral' },
+          { day: 'Sex', score: 4, color: 'bg-brand-forest' },
+          { day: 'Sab', score: 4, color: 'bg-brand-forest' },
+          { day: 'Dom', score: 5, color: 'bg-brand-forest' },
+        ].map((d) => (
+          <div class="flex-1 flex flex-col items-center gap-1">
+            <span class="font-mono text-[10px] text-brand-dark-muted">{d.score}</span>
+            <div class={`w-full rounded-t-md ${d.color} transition-all`} style={`height: ${d.score * 20}%;`}></div>
+            <span class="font-mono text-[10px] text-brand-dark-muted">{d.day}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <Section number="02" title="Streak Calendar" subtitle="Visualizacao mensal de consistencia">
+    <div class="surface-card p-6 max-w-md">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-display font-bold text-white">Abril 2026</h4>
+        <span class="font-mono text-xs text-brand-forest">8 dias</span>
+      </div>
+      <div class="grid grid-cols-7 gap-1.5 text-center">
+        {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((d) => (
+          <span class="font-mono text-[10px] text-brand-dark-muted py-1">{d}</span>
+        ))}
+        {/* Empty cells + days */}
+        {[0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((day) => {
+          if (day === 0) return <div class="w-8 h-8"></div>;
+          const checked = day <= 8;
+          const isToday = day === 9;
+          return (
+            <div class={`w-8 h-8 rounded-md flex items-center justify-center text-xs font-mono ${
+              checked ? 'bg-brand-forest text-white' :
+              isToday ? 'border border-brand-forest text-brand-forest' :
+              'text-brand-dark-muted'
+            }`}>
+              {day}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </Section>
+
+  <Section number="03" title="Mood Distribution" subtitle="Distribuicao de humor no periodo">
+    <div class="surface-card p-6 max-w-md">
+      <h4 class="font-mono text-xs text-brand-dark-muted uppercase tracking-widest mb-4">Ultimos 30 dias</h4>
+      <div class="space-y-3">
+        {[
+          { emoji: '😊', label: 'Otimo', count: 12, pct: 40, color: 'bg-brand-forest' },
+          { emoji: '🙂', label: 'Bom', count: 10, pct: 33, color: 'bg-brand-forest-light' },
+          { emoji: '😐', label: 'Normal', count: 5, pct: 17, color: 'bg-brand-dark-border' },
+          { emoji: '😕', label: 'Complicado', count: 2, pct: 7, color: 'bg-brand-coral-light' },
+          { emoji: '😔', label: 'Dificil', count: 1, pct: 3, color: 'bg-brand-coral' },
+        ].map((mood) => (
+          <div class="flex items-center gap-3">
+            <span class="text-lg w-8">{mood.emoji}</span>
+            <span class="text-xs text-brand-dark-muted w-20">{mood.label}</span>
+            <div class="flex-1 h-3 rounded-full bg-brand-dark-border/20 overflow-hidden">
+              <div class={`h-full rounded-full ${mood.color}`} style={`width: ${mood.pct}%;`}></div>
+            </div>
+            <span class="font-mono text-xs text-brand-dark-muted w-12 text-right">{mood.count}x</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+</BrandbookLayout>

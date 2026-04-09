@@ -1,0 +1,131 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="1.0"
+  pageTitle="App Preview"
+  pageSubtitle="Showcase interativo das telas principais do +Fortes."
+  sectionsCount={4}
+>
+
+  <Section number="01" title="Tela de Login" subtitle="Primeiro contato">
+    <div class="max-w-sm mx-auto">
+      <div class="bg-brand-white rounded-[20px] p-8 text-center space-y-6 shadow-lg">
+        <div class="w-14 h-14 mx-auto rounded-xl bg-brand-forest flex items-center justify-center">
+          <span class="font-display font-bold text-3xl text-white">+</span>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-xl text-brand-charcoal">+Fortes</h3>
+          <p class="text-sm text-brand-stone mt-1">Juntos, somos mais fortes</p>
+        </div>
+        <div class="space-y-3">
+          <input type="email" placeholder="Seu email" class="w-full bg-brand-snow border border-brand-mist rounded-[10px] px-4 py-2.5 text-sm text-brand-charcoal placeholder:text-brand-stone" />
+          <input type="password" placeholder="Senha" class="w-full bg-brand-snow border border-brand-mist rounded-[10px] px-4 py-2.5 text-sm text-brand-charcoal placeholder:text-brand-stone" />
+          <button class="w-full py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm">Entrar</button>
+        </div>
+        <p class="text-xs text-brand-stone">Nao tem conta? <span class="text-brand-forest font-semibold">Criar conta</span></p>
+      </div>
+    </div>
+  </Section>
+
+  <Section number="02" title="Dashboard — Light Mode" subtitle="Visao principal do protagonista">
+    <div class="max-w-sm mx-auto">
+      <div class="bg-brand-white rounded-[20px] overflow-hidden shadow-lg">
+        <!-- Top bar -->
+        <div class="px-5 py-4 flex items-center justify-between">
+          <div>
+            <p class="text-sm text-brand-stone">Oi, Wilder</p>
+            <p class="font-display font-bold text-brand-charcoal">Como vai hoje?</p>
+          </div>
+          <div class="w-10 h-10 rounded-full bg-brand-forest/10 flex items-center justify-center">
+            <span class="font-display font-bold text-brand-forest">W</span>
+          </div>
+        </div>
+        <!-- Streak -->
+        <div class="mx-5 p-4 rounded-[16px] bg-brand-forest/5 border border-brand-forest/15 flex items-center gap-3">
+          <span class="font-mono font-bold text-3xl text-brand-forest">8</span>
+          <div>
+            <p class="text-sm font-semibold text-brand-charcoal">dias seguidos 🔥</p>
+            <p class="text-xs text-brand-stone">Parar de beber</p>
+          </div>
+        </div>
+        <!-- Check-in -->
+        <div class="mx-5 mt-4 p-5 rounded-[16px] bg-brand-snow border border-brand-mist space-y-3">
+          <p class="font-display font-bold text-sm text-brand-charcoal">Como foi hoje?</p>
+          <div class="flex justify-between">
+            {['😔', '😕', '😐', '🙂', '😊'].map((e, i) => (
+              <button class={`w-11 h-11 rounded-xl flex items-center justify-center text-xl ${i === 3 ? 'bg-brand-forest/10 ring-2 ring-brand-forest' : ''}`}>{e}</button>
+            ))}
+          </div>
+          <button class="w-full py-2 bg-brand-forest text-white rounded-[10px] text-sm font-semibold">Registrar</button>
+        </div>
+        <!-- Supporters -->
+        <div class="mx-5 mt-4 mb-5">
+          <p class="text-xs text-brand-stone mb-2">Sua rede de apoio</p>
+          <div class="flex gap-2">
+            {['M', 'J', 'A'].map((letter) => (
+              <div class="w-8 h-8 rounded-full bg-brand-coral/10 flex items-center justify-center">
+                <span class="text-xs font-bold text-brand-coral">{letter}</span>
+              </div>
+            ))}
+            <div class="w-8 h-8 rounded-full bg-brand-mist flex items-center justify-center">
+              <span class="text-xs text-brand-stone">+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section number="03" title="Visao do Apoiador" subtitle="Como o apoiador ve o progresso">
+    <div class="max-w-sm mx-auto">
+      <div class="bg-brand-white rounded-[20px] overflow-hidden shadow-lg p-5 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brand-forest/10 flex items-center justify-center">
+            <span class="font-bold text-brand-forest">W</span>
+          </div>
+          <div>
+            <p class="font-display font-bold text-sm text-brand-charcoal">Wilder</p>
+            <p class="text-xs text-brand-stone">Parar de beber — 8 dias 🔥</p>
+          </div>
+        </div>
+        <!-- Mini calendar -->
+        <div class="grid grid-cols-7 gap-1">
+          {[1,2,3,4,5,6,7].map((d) => (
+            <div class={`w-8 h-8 rounded text-xs flex items-center justify-center font-mono ${d <= 8 ? 'bg-brand-forest/15 text-brand-forest' : 'text-brand-stone'}`}>{d}</div>
+          ))}
+        </div>
+        <div class="p-3 rounded-[12px] bg-brand-snow border border-brand-mist">
+          <p class="text-xs text-brand-stone">Ultimo check-in: Hoje</p>
+          <div class="flex items-center gap-2 mt-1">
+            <span>🙂</span>
+            <span class="text-sm text-brand-charcoal">Bom dia. Mantendo firme.</span>
+          </div>
+        </div>
+        <button class="w-full py-2.5 bg-brand-coral/10 text-brand-coral rounded-[12px] text-sm font-semibold border border-brand-coral/20">
+          Enviar incentivo 💬
+        </button>
+      </div>
+    </div>
+  </Section>
+
+  <Section number="04" title="Notificacao Push" subtitle="Como aparece no celular">
+    <div class="max-w-sm mx-auto">
+      <div class="surface-card p-4 rounded-[16px] flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-forest flex items-center justify-center shrink-0">
+          <span class="font-display font-bold text-lg text-white">+</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-body font-semibold text-sm text-white">+Fortes</span>
+            <span class="font-mono text-[10px] text-brand-dark-muted">agora</span>
+          </div>
+          <p class="text-sm text-brand-dark-muted mt-0.5">Ei, como foi hoje? Seu check-in esta disponivel.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+</BrandbookLayout>

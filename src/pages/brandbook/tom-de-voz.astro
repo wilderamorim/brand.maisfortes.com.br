@@ -1,0 +1,91 @@
+---
+import BrandbookLayout from '@/layouts/BrandbookLayout.astro';
+import Section from '@/components/layout/Section.astro';
+---
+
+<BrandbookLayout
+  pageNumber="6.0"
+  pageTitle="Tom de Voz"
+  pageSubtitle="Guia de copywriting, exemplos e regras de comunicacao da marca."
+  sectionsCount={4}
+>
+
+  <Section number="01" title="Principios de Escrita" subtitle="Como escrevemos">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {[
+        { title: 'Curto e direto', example: '"Ei, como foi hoje?" em vez de "Gostaríamos de saber como foi o seu dia de hoje."' },
+        { title: 'Primeira pessoa do plural', example: '"Juntos, somos +Fortes" — sempre coletivo, nunca solitario.' },
+        { title: 'Sem jargao clinico', example: '"Dia dificil" em vez de "episodio de recaida". "Tropeco" em vez de "falha".' },
+        { title: 'Acolhimento antes de acao', example: '"Tudo bem. O importante e voltar." — primeiro valida, depois motiva.' },
+      ].map((p) => (
+        <div class="surface-card p-5 space-y-2">
+          <h4 class="font-display font-bold text-white">{p.title}</h4>
+          <p class="text-sm text-brand-dark-muted italic">{p.example}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section number="02" title="Reescrita de Exemplos" subtitle="Antes vs. Depois">
+    <div class="space-y-3">
+      {[
+        { before: 'Voce falhou no check-in de ontem.', after: 'Ontem passou sem check-in. Tudo bem — hoje e um novo dia.' },
+        { before: 'Parabens! Voce completou 7 dias sem recaida!', after: '1 semana firme! Voce ta criando um habito.' },
+        { before: 'Seu monitor Maria foi notificado da sua inatividade.', after: 'Maria sentiu sua falta. Que tal fazer o check-in de hoje?' },
+        { before: 'Erro ao processar requisicao. Tente novamente mais tarde.', after: 'Algo deu errado. Tenta de novo?' },
+        { before: 'Cadastro realizado com sucesso. Bem-vindo a plataforma.', after: 'Pronto! Sua jornada comeca agora.' },
+      ].map((item) => (
+        <div class="surface-card p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <span class="font-mono text-[10px] text-brand-coral uppercase tracking-widest">Antes</span>
+            <p class="text-sm text-brand-dark-muted mt-1 line-through decoration-brand-coral/30">{item.before}</p>
+          </div>
+          <div>
+            <span class="font-mono text-[10px] text-brand-forest uppercase tracking-widest">Depois</span>
+            <p class="text-sm text-white mt-1">{item.after}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section number="03" title="Tom por Canal" subtitle="Adaptacao de voz por contexto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {[
+        { canal: 'App (UI)', tom: 'Intimo, curto', exemplo: '"Como foi hoje?"', nota: 'Maximo 2 linhas por mensagem' },
+        { canal: 'Push notification', tom: 'Gentil, nao invasivo', exemplo: '"Seu check-in esta disponivel"', nota: 'Nunca culpar ou pressionar' },
+        { canal: 'Email', tom: 'Caloroso, pessoal', exemplo: '"Oi [nome], sua semana foi incrivel"', nota: 'Sempre personalizado com nome' },
+      ].map((c) => (
+        <div class="surface-card p-5 space-y-3">
+          <h4 class="font-display font-bold text-white">{c.canal}</h4>
+          <span class="font-mono text-xs text-brand-forest">{c.tom}</span>
+          <p class="text-sm text-white italic">"{c.exemplo}"</p>
+          <p class="text-[10px] text-brand-dark-muted">{c.nota}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section number="04" title="Checklist de Copy" subtitle="Antes de publicar, verifique">
+    <div class="surface-card p-6">
+      <ul class="space-y-3">
+        {[
+          'Parece um amigo falando? (nao uma empresa)',
+          'E curto o suficiente? (corte pela metade)',
+          'Acolhe antes de cobrar?',
+          'Evita palavras da lista "Evitamos"?',
+          'Um protagonista em dia dificil se sentiria julgado lendo isso?',
+          'Um apoiador saberia o que fazer ao ler isso?',
+        ].map((item) => (
+          <li class="flex items-start gap-3 text-sm">
+            <div class="w-5 h-5 rounded border border-brand-forest/40 flex items-center justify-center shrink-0 mt-0.5">
+              <span class="text-brand-forest text-xs">?</span>
+            </div>
+            <span class="text-brand-dark-text">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+
+</BrandbookLayout>
