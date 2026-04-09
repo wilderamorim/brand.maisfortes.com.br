@@ -12,32 +12,32 @@ import Section from '@/components/layout/Section.astro';
 
   <Section number="01" title="Tela de Login" subtitle="Primeiro contato">
     <div class="max-w-sm mx-auto">
-      <div class="bg-white rounded-[20px] border border-brand-mist p-8 text-center space-y-6 shadow-lg">
+      <div class="surface-elevated p-8 text-center space-y-6 rounded-[20px]">
         <div class="w-14 h-14 mx-auto rounded-xl bg-brand-forest flex items-center justify-center">
           <span class="font-display font-bold text-3xl text-white">+</span>
         </div>
         <div>
-          <h3 class="font-display font-bold text-xl text-brand-charcoal">+Fortes</h3>
-          <p class="text-sm text-brand-stone mt-1">Juntos, somos mais fortes</p>
+          <h3 class="font-display font-bold text-xl t-heading">+Fortes</h3>
+          <p class="text-sm t-muted mt-1">Juntos, somos mais fortes</p>
         </div>
         <div class="space-y-3">
-          <input type="email" placeholder="Seu email" class="w-full bg-brand-snow border border-brand-mist rounded-[10px] px-4 py-2.5 text-sm text-brand-charcoal placeholder:text-brand-stone" />
-          <input type="password" placeholder="Senha" class="w-full bg-brand-snow border border-brand-mist rounded-[10px] px-4 py-2.5 text-sm text-brand-charcoal placeholder:text-brand-stone" />
+          <input type="email" placeholder="Seu email" class="w-full rounded-[10px] px-4 py-2.5 text-sm t-heading" style="background: var(--theme-surface); border: 1px solid var(--theme-border); color: var(--theme-text);" />
+          <input type="password" placeholder="********" class="w-full rounded-[10px] px-4 py-2.5 text-sm" style="background: var(--theme-surface); border: 1px solid var(--theme-border); color: var(--theme-text);" />
           <button class="w-full py-2.5 bg-brand-forest text-white rounded-[12px] font-body font-semibold text-sm">Entrar</button>
         </div>
-        <p class="text-xs text-brand-stone">Não tem conta? <span class="text-brand-forest font-semibold">Criar conta</span></p>
+        <p class="text-xs t-muted">Não tem conta? <span class="text-brand-forest font-semibold">Criar conta</span></p>
       </div>
     </div>
   </Section>
 
-  <Section number="02" title="Dashboard — Light Mode" subtitle="Visão principal do protagonista">
+  <Section number="02" title="Dashboard" subtitle="Visão principal do protagonista">
     <div class="max-w-sm mx-auto">
-      <div class="bg-white rounded-[20px] border border-brand-mist overflow-hidden shadow-lg">
+      <div class="surface-elevated rounded-[20px] overflow-hidden">
         <!-- Top bar -->
         <div class="px-5 py-4 flex items-center justify-between">
           <div>
-            <p class="text-sm text-brand-stone">Oi, Wilder</p>
-            <p class="font-display font-bold text-brand-charcoal">Como vai hoje?</p>
+            <p class="text-sm t-muted">Oi, Wilder</p>
+            <p class="font-display font-bold t-heading">Como vai hoje?</p>
           </div>
           <div class="w-10 h-10 rounded-full bg-brand-forest/10 flex items-center justify-center">
             <span class="font-display font-bold text-brand-forest">W</span>
@@ -47,13 +47,13 @@ import Section from '@/components/layout/Section.astro';
         <div class="mx-5 p-4 rounded-[16px] bg-brand-forest/5 border border-brand-forest/15 flex items-center gap-3">
           <span class="font-mono font-bold text-3xl text-brand-forest">8</span>
           <div>
-            <p class="text-sm font-semibold text-brand-charcoal">dias seguidos 🔥</p>
-            <p class="text-xs text-brand-stone">Parar de beber</p>
+            <p class="text-sm font-semibold t-heading">dias seguidos 🔥</p>
+            <p class="text-xs t-muted">Parar de beber</p>
           </div>
         </div>
         <!-- Check-in -->
-        <div class="mx-5 mt-4 p-5 rounded-[16px] bg-brand-snow border border-brand-mist space-y-3">
-          <p class="font-display font-bold text-sm text-brand-charcoal">Como foi hoje?</p>
+        <div class="mx-5 mt-4 p-5 rounded-[16px] space-y-3" style="background: var(--theme-surface); border: 1px solid var(--theme-border-subtle);">
+          <p class="font-display font-bold text-sm t-heading">Como foi hoje?</p>
           <div class="flex justify-between">
             {['😔', '😕', '😐', '🙂', '😊'].map((e, i) => (
               <button class={`w-11 h-11 rounded-xl flex items-center justify-center text-xl ${i === 3 ? 'bg-brand-forest/10 ring-2 ring-brand-forest' : ''}`}>{e}</button>
@@ -63,15 +63,15 @@ import Section from '@/components/layout/Section.astro';
         </div>
         <!-- Supporters -->
         <div class="mx-5 mt-4 mb-5">
-          <p class="text-xs text-brand-stone mb-2">Sua rede de apoio</p>
+          <p class="text-xs t-muted mb-2">Sua rede de apoio</p>
           <div class="flex gap-2">
             {['M', 'J', 'A'].map((letter) => (
               <div class="w-8 h-8 rounded-full bg-brand-coral/10 flex items-center justify-center">
                 <span class="text-xs font-bold text-brand-coral">{letter}</span>
               </div>
             ))}
-            <div class="w-8 h-8 rounded-full bg-brand-mist flex items-center justify-center">
-              <span class="text-xs text-brand-stone">+</span>
+            <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--theme-surface);">
+              <span class="text-xs t-muted">+</span>
             </div>
           </div>
         </div>
@@ -81,27 +81,27 @@ import Section from '@/components/layout/Section.astro';
 
   <Section number="03" title="Visão do Apoiador" subtitle="Como o apoiador vê o progresso">
     <div class="max-w-sm mx-auto">
-      <div class="bg-white rounded-[20px] border border-brand-mist overflow-hidden shadow-lg p-5 space-y-4">
+      <div class="surface-elevated rounded-[20px] overflow-hidden p-5 space-y-4">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-brand-forest/10 flex items-center justify-center">
             <span class="font-bold text-brand-forest">W</span>
           </div>
           <div>
-            <p class="font-display font-bold text-sm text-brand-charcoal">Wilder</p>
-            <p class="text-xs text-brand-stone">Parar de beber — 8 dias 🔥</p>
+            <p class="font-display font-bold text-sm t-heading">Wilder</p>
+            <p class="text-xs t-muted">Parar de beber — 8 dias 🔥</p>
           </div>
         </div>
         <!-- Mini calendar -->
         <div class="grid grid-cols-7 gap-1">
           {[1,2,3,4,5,6,7].map((d) => (
-            <div class={`w-8 h-8 rounded text-xs flex items-center justify-center font-mono ${d <= 8 ? 'bg-brand-forest/15 text-brand-forest' : 'text-brand-stone'}`}>{d}</div>
+            <div class={`w-8 h-8 rounded text-xs flex items-center justify-center font-mono ${d <= 8 ? 'bg-brand-forest/15 text-brand-forest' : 't-muted'}`}>{d}</div>
           ))}
         </div>
-        <div class="p-3 rounded-[12px] bg-brand-snow border border-brand-mist">
-          <p class="text-xs text-brand-stone">Último check-in: Hoje</p>
+        <div class="p-3 rounded-[12px]" style="background: var(--theme-surface); border: 1px solid var(--theme-border-subtle);">
+          <p class="text-xs t-muted">Último check-in: Hoje</p>
           <div class="flex items-center gap-2 mt-1">
             <span>🙂</span>
-            <span class="text-sm text-brand-charcoal">Bom dia. Mantendo firme.</span>
+            <span class="text-sm t-heading">Bom dia. Mantendo firme.</span>
           </div>
         </div>
         <button class="w-full py-2.5 bg-brand-coral/10 text-brand-coral rounded-[12px] text-sm font-semibold border border-brand-coral/20">
